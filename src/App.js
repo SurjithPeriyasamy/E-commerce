@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
 import Header from "./components/Header";
-import MainContainer from "./components/MainContainer";
+import { useDispatch, useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 import SideBar from "./components/SideBar";
+import { closeSideBar } from "./utils/sideBarSlice";
+
 function App() {
-  //darkmode functionalities will put into redux
-  const [isdark, setIsDark] = useState(false);
+  const dispatch = useDispatch();
+  const isDarkMode = useSelector((store) => store.theme.isDarkMode);
   return (
-    <div className={`font-Lato ${isdark && "dark"}`}>
-      <Header setIsDark={setIsDark} isdark={isdark} />
-      <SideBar darkMode={isdark} />
-      <MainContainer da={isdark} />
+    <div className={`font-Lato ${isDarkMode && "dark"}`}>
+      <Header />
+      <SideBar />
+      <div onClick={() => dispatch(closeSideBar())}>
+        <Outlet />
+      </div>
     </div>
   );
 }

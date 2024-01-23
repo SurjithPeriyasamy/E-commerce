@@ -7,3 +7,6 @@
 * {
   @apply transition-all duration-75;
 }
+.comp-top-space {
+  @apply mt-24 lg:mt-14;
+}
