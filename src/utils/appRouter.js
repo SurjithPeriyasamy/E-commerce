@@ -6,6 +6,7 @@ import SignUpPage from "../components/SignUpPage";
 import Categories from "../components/Categories";
 import About from "../components/About";
 import Cart from "../components/Cart";
+import EditUserProfile from "../components/EditUserProfile";
 
 export const appRouter = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/edit-user",
+        element: <EditUserProfile />,
       },
       {
         path: "/cart",

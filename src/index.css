@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 * {
-  @apply transition-all duration-75;
+  @apply transition-all duration-[50ms];
 }
 .comp-top-space {
-  @apply mt-24 lg:mt-14;
+  @apply mt-[102px] lg:mt-[68px];
 }
