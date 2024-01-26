@@ -2,11 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Errorpage from "../components/ErrorPage";
 import Body from "../components/Body";
-import SignUpPage from "../components/SignUpPage";
+import SignUpPage from "../components/login/SignUpPage";
 import Categories from "../components/Categories";
 import About from "../components/About";
 import Cart from "../components/Cart";
-import EditUserProfile from "../components/EditUserProfile";
+import UserProfile from "../components/user/UserProfile";
 
 export const appRouter = createBrowserRouter([
   {
@@ -27,8 +27,8 @@ export const appRouter = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/edit-user",
-        element: <EditUserProfile />,
+        path: "/user",
+        element: <UserProfile />,
       },
       {
         path: "/cart",

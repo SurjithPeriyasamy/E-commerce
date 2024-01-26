@@ -76,7 +76,7 @@ const Header = () => {
                   onClick={handlePopUp}
                   src={loggedInUser?.photoURL}
                   alt="user"
-                  className="h-[45px] cursor-pointer rounded-full"
+                  className="h-[45px] w-[45px] cursor-pointer rounded-full"
                 />
               ) : (
                 <Link to={"/signUp"} className="">
@@ -88,7 +88,7 @@ const Header = () => {
         </div>
       </div>
       {userPopUp && (
-        <div className="absolute top-[70px] p-5 xl:right-44 right-3 lg:w-[30%] w-1/2 max-h-96 text-black dark:text-white dark:bg-gradient-to-b dark:from-slate-800 dark:to-slate-800 bg-gradient-to-tr from-teal-800 to-teal-300 rounded-3xl ">
+        <div className="absolute top-[70px] p-5 xl:right-44 right-3 lg:w-[30%] md:w-1/2 w-3/4 max-h-96 text-black dark:text-white dark:bg-gradient-to-b dark:from-slate-800 dark:to-slate-800 bg-gradient-to-tr from-teal-800 to-teal-300 rounded-3xl ">
           <UserPopUp />
         </div>
       )}

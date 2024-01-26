@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -10,13 +11,13 @@ import { GoogleAuthProvider } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDXkaKhEc5rZBYlw6XyaLyxc6C4w_u6F7s",
-  authDomain: "e-commerce-c8e21.firebaseapp.com",
-  projectId: "e-commerce-c8e21",
-  storageBucket: "e-commerce-c8e21.appspot.com",
-  messagingSenderId: "907862412362",
-  appId: "1:907862412362:web:0f4f7051868a6555cbeab3",
-  measurementId: "G-ZC21P6XLRN",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_AUTH_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_AUTH_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_AUTH_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_AUTH_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_AUTH_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
@@ -25,3 +26,5 @@ const analytics = getAnalytics(app);
 export const provider = new GoogleAuthProvider();
 
 export const auth = getAuth(app);
+
+export const storage = getStorage(app);

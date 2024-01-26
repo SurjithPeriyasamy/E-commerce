@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.js"],
   theme: {
     extend: {
+      animation: {
+        "pulse-fast": "pulse 0.8s linear infinite",
+      },
       fontFamily: {
         Pacifico: ["Pacifico"],
         Poppins: ["Poppins"],

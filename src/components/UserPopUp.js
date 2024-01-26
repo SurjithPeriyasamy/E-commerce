@@ -5,16 +5,18 @@ import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { closePopUp } from "../utils/userSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const UserPopUp = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const loggedInUser = useSelector((store) => store.user.loggedInUser);
   const handleUser = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
         dispatch(closePopUp());
+        navigate("/");
       })
       .catch((error) => {
         // An error happened.
@@ -25,11 +27,11 @@ const UserPopUp = () => {
   };
   return (
     loggedInUser && (
-      <div
-        onClick={handlePopUp}
-        className="flex flex-col gap-5 items-center relative top-0"
-      >
-        <IoClose className="absolute right-0 text-2xl cursor-pointer" />
+      <div className="flex flex-col gap-5 items-center relative top-0">
+        <IoClose
+          onClick={handlePopUp}
+          className="absolute right-0 text-2xl cursor-pointer"
+        />
         <h2 className="w-11/12 truncate pr-2 text-center">
           {loggedInUser.email}
         </h2>
@@ -37,12 +39,15 @@ const UserPopUp = () => {
           <img
             src={loggedInUser?.photoURL}
             alt="use"
-            className="h-14 w-14 rounded-full"
+            className="h-20 w-20 rounded-full"
           />
         </div>
         <h2 className="truncate">Hello {loggedInUser.displayName}!!!</h2>
-        <Link to={"/edit-user"}>
-          <button className="shadow-lg dark:bg-black dark:bg-opacity-50 px-3 py-1 rounded-lg flex items-center gap-2">
+        <Link to={"/user"}>
+          <button
+            onClick={handlePopUp}
+            className="shadow-lg dark:bg-black dark:bg-opacity-50 px-3 py-1 rounded-lg flex items-center gap-2"
+          >
             Manage Your Profile
             <ImProfile />
           </button>
