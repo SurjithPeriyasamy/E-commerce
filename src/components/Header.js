@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Brand from "./Brand";
 import UserPopUp from "./UserPopUp";
 import { togglePopUp } from "../utils/userSlice";
+import { Fade } from "react-awesome-reveal";
 
 const Header = () => {
   const [isSearchActive, setIsSearchActive] = useState(false);
@@ -22,17 +23,23 @@ const Header = () => {
   const handlePopUp = () => {
     dispatch(togglePopUp());
   };
-
   return (
-    <div className="fixed min-[2000px]:scale-125 left-0 top-0 z-50 w-full text-red-300 dark:text-gray-400 font-semibold bg-[#3d3b48] dark:bg-black">
-      <div className="flex justify-between xl:w-[80%] items-center mx-auto py-3 px-5 xl:px-0">
-        <div className="w-1/2 lg:w-1/5 flex items-center gap-3 select-none ">
+    <div className="fixed font-semibold  dark:bg-[#1D232A] dark:text-[#A6ADBA] min-[2000px]:scale-125 left-0 top-0 z-50 w-full ">
+      {/* <Fade
+        duration={100}
+        cascade
+        className="w-full bg-red-500 dark:text-cyan-500 dark:bg-[#1D232A] py-1 font-bold text-sm tracking-widest text-center"
+      >
+        Hello Buddy !!! Elevate Your Style with Me
+      </Fade> */}
+      <div className="flex bg-[#30d5c8]  dark:bg-[#1D232A]  h-[70px] shadow-xl  justify-between max-w-7xl lg:max-w-[90%] items-center mx-auto px-5 py-2 rounded-b-lg">
+        <div className="w-1/2 lg:w-1/5 flex items-center gap-3 select-none h-full">
           <GiHamburgerMenu
             size={26}
             className="lg:hidden cursor-pointer"
             onClick={handleMenu}
           />
-          <div className="h-12 ">
+          <div className="h-full dark:bg-transparent p-[2px] dark:p-0 rounded-xl">
             <Brand />
           </div>
         </div>

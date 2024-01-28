@@ -3,7 +3,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import BrandLogo from "../images/brandLogo.png";
 
@@ -28,6 +28,11 @@ const Brand = () => {
   }, []);
   return (
     <Link to={"/"}>
+      {/* <img
+        src={BrandLogo1}
+        alt="brand"
+        className="h-12 dark:opacity-0 absolute"
+      /> */}
       <img src={BrandLogo} alt="brand" className="h-full" />
     </Link>
   );

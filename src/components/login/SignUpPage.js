@@ -32,13 +32,23 @@ const SignUpPage = () => {
             ) : (
               <UserForm isSignIn={isSignIn} />
             )}
-            {isSignIn && !isForgetPassword && (
+            {isSignIn && (
               <div className="w-full self-start">
-                <button
-                  className="text-cyan-500 cursor-pointer font-semibold"
-                  onClick={() => setIsForgetPassword(true)}
-                >
-                  Forget password ?
+                <button className="text-cyan-500 cursor-pointer font-semibold">
+                  {!isForgetPassword ? (
+                    <span onClick={() => setIsForgetPassword(true)}>
+                      Forget password ?
+                    </span>
+                  ) : (
+                    <span
+                      onClick={() => {
+                        setIsSignIn(true);
+                        setIsForgetPassword(false);
+                      }}
+                    >
+                      Sign In
+                    </span>
+                  )}
                 </button>
               </div>
             )}

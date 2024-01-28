@@ -3,7 +3,7 @@ import MainContainer from "./MainContainer";
 
 const Body = () => {
   return (
-    <div className="mt-20 lg:mt-5">
+    <div className="comp-top-space  max-w-7xl mx-auto">
       <MainContainer />
     </div>
   );

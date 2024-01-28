@@ -16,11 +16,13 @@ function App() {
     dispatch(closePopUp());
   };
   return (
-    <div className={`font-Lato ${isDarkMode && "dark"}`}>
-      <Header />
-      <SideBar />
-      <div onClick={handleMenuAndPopUp}>
-        <Outlet />
+    <div className={`font-Lato ${isDarkMode && "dark"}  `}>
+      <div className=" dark:bg-[#1D232A] duration-200">
+        <Header />
+        <SideBar />
+        <div onClick={handleMenuAndPopUp}>
+          <Outlet />
+        </div>
       </div>
     </div>
   );

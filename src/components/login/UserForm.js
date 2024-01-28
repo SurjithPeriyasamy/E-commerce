@@ -3,7 +3,6 @@ import { validate } from "../../utils/validate";
 import { auth } from "../../utils/firebase";
 import {
   createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
@@ -69,8 +68,6 @@ const UserForm = ({ isSignIn }) => {
       )
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
-          // ...
         })
         .catch((error) => {
           const errorMessage = error.message;

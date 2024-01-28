@@ -33,7 +33,7 @@ const SideBar = () => {
     <div
       className={`lg:hidden absolute ${
         isMenuOpen ? "left-0" : "-left-full"
-      } top-0 z-50 bg-white dark:bg-slate-900 dark:text-gray-50 h-screen p-5 sm:w-1/2  w-3/4 duration-300`}
+      } top-0 z-50 dark:bg-[#1D232A] bg-white dark:text-gray-400 h-screen p-5 sm:w-1/2  w-3/4 duration-300`}
     >
       <BiCloset
         onClick={handleMenu}
