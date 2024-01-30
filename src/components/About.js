@@ -8,7 +8,7 @@ const About = () => {
     dispatch(closeSideBar());
     dispatch(closePopUp());
   }, []);
-  return <div className="comp-top-space">About</div>;
+  return <div className="">About</div>;
 };
 
 export default About;

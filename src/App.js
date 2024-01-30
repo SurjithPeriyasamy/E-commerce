@@ -1,28 +1,27 @@
 import React from "react";
 import "./index.css";
 import Header from "./components/Header";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Outlet } from "react-router-dom";
 import SideBar from "./components/SideBar";
 import { closeSideBar } from "./utils/sideBarSlice";
 import { closePopUp } from "./utils/userSlice";
+import { closeSearch } from "./utils/searchSlice";
 
 function App() {
   const dispatch = useDispatch();
-  const isDarkMode = useSelector((store) => store.theme.isDarkMode);
 
-  const handleMenuAndPopUp = () => {
+  const handleClick = () => {
     dispatch(closeSideBar());
     dispatch(closePopUp());
+    dispatch(closeSearch());
   };
   return (
-    <div className={`font-Lato ${isDarkMode && "dark"}  `}>
-      <div className=" dark:bg-[#1D232A] duration-200">
-        <Header />
-        <SideBar />
-        <div onClick={handleMenuAndPopUp}>
-          <Outlet />
-        </div>
+    <div className={`font-Lato `}>
+      <Header />
+      <SideBar />
+      <div className="comp-top-space" onClick={handleClick}>
+        <Outlet />
       </div>
     </div>
   );

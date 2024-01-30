@@ -3,10 +3,12 @@ import App from "../App";
 import Errorpage from "../components/ErrorPage";
 import Body from "../components/Body";
 import SignUpPage from "../components/login/SignUpPage";
-import Categories from "../components/Categories";
 import About from "../components/About";
 import Cart from "../components/Cart";
 import UserProfile from "../components/user/UserProfile";
+import ProductDetail from "../components/ProductDetail";
+import ProductsContainer from "../components/ProductsContainer";
+import ProductsCategory from "../components/ProductCategory";
 
 export const appRouter = createBrowserRouter([
   {
@@ -17,10 +19,13 @@ export const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Body />,
-      },
-      {
-        path: "/categories",
-        element: <Categories />,
+        children: [
+          {
+            path: "/",
+            element: <ProductsContainer />,
+          },
+          { path: "/category/:name", element: <ProductsContainer /> },
+        ],
       },
       {
         path: "/about",
@@ -29,6 +34,11 @@ export const appRouter = createBrowserRouter([
       {
         path: "/user",
         element: <UserProfile />,
+      },
+      { path: "/products/category/:name", element: <ProductsCategory /> },
+      {
+        path: "/products/:productId",
+        element: <ProductDetail />,
       },
       {
         path: "/cart",

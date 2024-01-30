@@ -28,7 +28,6 @@ const UpdatePassword = () => {
       .catch((error) => {
         // An error ocurred
         // ...
-        console.log(error);
       });
   };
 

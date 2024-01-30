@@ -54,7 +54,7 @@ const ForgetPassForm = () => {
           <MdDone size={20} />
         </span>
       )}
-      <button className="text-cyan-400 font-semibold w-1/2 shadow-sm shadow-fuchsia-400 hover:shadow-none hover:mt-1 p-2 text-sm rounded-lg">
+      <button className="text-cyan-400 font-semibold w-1/2 shadow-sm shadow-fuchsia-400 hover:shadow-none hover:translate-y-2 duration-200 p-2 text-sm rounded-lg">
         Send email
       </button>
     </form>

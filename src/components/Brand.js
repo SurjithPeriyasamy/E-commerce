@@ -28,12 +28,7 @@ const Brand = () => {
   }, []);
   return (
     <Link to={"/"}>
-      {/* <img
-        src={BrandLogo1}
-        alt="brand"
-        className="h-12 dark:opacity-0 absolute"
-      /> */}
-      <img src={BrandLogo} alt="brand" className="h-full" />
+      <img src={BrandLogo} alt="brand" className="w-full h-full" />
     </Link>
   );
 };

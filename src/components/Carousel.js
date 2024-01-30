@@ -14,11 +14,11 @@ const Carousel = () => {
     dispatch(closeSideBar());
   }, []);
 
-  useEffect(() => {
-    const autoPlay = setTimeout(handleNext, 2500);
+  // useEffect(() => {
+  //   const autoPlay = setInterval(handleNext, 2500);
 
-    return () => clearTimeout(autoPlay);
-  }, [currIndex]);
+  //   return () => clearInterval(autoPlay);
+  // }, []);
   const handleNext = () => {
     setCurrIndex((prev) =>
       prev === CAROUSEL_IMAGES.length - 1 ? 0 : prev + 1
@@ -36,7 +36,7 @@ const Carousel = () => {
         className="flex duration-300 "
         style={{ transform: `translateX(-${currIndex * 100}%)` }}
       >
-        {CAROUSEL_IMAGES.map((image) => (
+        {CAROUSEL_IMAGES?.map((image) => (
           <div key={image.id} className="shrink-0 relative w-full">
             <img src={image.url} alt="land" className="w-full" />
             <div className="max-md:hidden top-1/4 w-1/2 left-1/2 -translate-x-1/2 max-w-[50%] absolute text-center text-white text-4xl font-semibold tracking-wider italic flex flex-col">

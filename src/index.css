@@ -8,5 +8,11 @@
   @apply transition-all duration-[50ms];
 }
 .comp-top-space {
-  @apply mt-[100px] lg:mt-[63px];
+  @apply mt-[100px] lg:mt-[70px];
+}
+html {
+  @apply scroll-smooth scrollbar scrollbar-w-2 scrollbar-thumb-slate-400 scrollbar-thumb-rounded-xl;
+}
+body.dark {
+  @apply bg-[#1D232A];
 }
