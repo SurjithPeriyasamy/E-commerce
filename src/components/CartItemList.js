@@ -2,17 +2,18 @@ import { Link } from "react-router-dom";
 import { MdDeleteSweep } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { removeItem, updateQuantity } from "../utils/cartSlice";
+
 const CartItemList = ({ item }) => {
   const dispatch = useDispatch();
   const { title, thumbnail, category, price, id } = item.productDetail;
   const handleAddQuantity = () => {
-    dispatch(updateQuantity({ title, quantity: 1 }));
+    dispatch(updateQuantity({ id, quantity: 1 }));
   };
   const handleReduceQuantity = () => {
-    dispatch(updateQuantity({ title, quantity: -1 }));
+    dispatch(updateQuantity({ id, quantity: -1 }));
   };
   const handleRemove = () => {
-    dispatch(removeItem(title));
+    dispatch(removeItem(id));
   };
   return (
     <div
