@@ -9,7 +9,7 @@ const cartSlice = createSlice({
     addCartItems: (state, action) => {
       state.addedItems = { ...state.addedItems, ...action.payload };
     },
-    addQuantity: (state, action) => {
+    updateQuantity: (state, action) => {
       const { quantity, title } = action.payload;
       const item = state.addedItems[title];
       if (item.quantity <= 1) {
@@ -27,5 +27,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addCartItems, addQuantity, removeItem } = cartSlice.actions;
+export const { addCartItems, updateQuantity, removeItem } = cartSlice.actions;
 export default cartSlice.reducer;

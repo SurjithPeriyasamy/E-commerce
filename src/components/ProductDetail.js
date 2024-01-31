@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { closeSearch } from "../utils/searchSlice";
 import { IoMdHeartEmpty, IoMdStar } from "react-icons/io";
 import { FaHeart } from "react-icons/fa6";
-import { addCartItems, addQuantity } from "../utils/cartSlice";
+import { addCartItems, updateQuantity } from "../utils/cartSlice";
 import { FcOk } from "react-icons/fc";
 
 const ProductDetail = () => {
@@ -42,11 +42,11 @@ const ProductDetail = () => {
     setQuantity(quantity + 1);
   };
   const handleReduceQuantity = () => {
-    setQuantity(quantity > 1 ? quantity - 1 : 1);
+    setQuantity(quantity >= 1 ? quantity - 1 : 1);
   };
   const handleCartItems = () => {
     addedItems[title]
-      ? dispatch(addQuantity({ title, quantity }))
+      ? dispatch(updateQuantity({ title, quantity }))
       : dispatch(
           addCartItems({
             [title]: {
