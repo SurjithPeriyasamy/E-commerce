@@ -4,20 +4,20 @@ export const USER_IMAGE_URL =
 export const CAROUSEL_IMAGES = [
   {
     id: 1,
-    slogan: "A New Era of Excellence",
-    url: "https://images.unsplash.com/photo-1635657987517-c143fad8079c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    id: 2,
     slogan: "Connecting Minds, Shaping the Future",
     url: "https://images.unsplash.com/photo-1615655406736-b37c4fabf923?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
-
   {
-    id: 3,
+    id: 2,
     slogan: "Feel trendy. Feel authentic",
     url: "https://images.unsplash.com/photo-1616761512547-ea151d8a56d5?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
+  {
+    id: 3,
+    slogan: "A New Era of Excellence",
+    url: "https://images.unsplash.com/photo-1635657987517-c143fad8079c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+
   {
     id: 4,
     slogan: "Your Beauty, Your Story",

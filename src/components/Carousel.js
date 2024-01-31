@@ -39,7 +39,7 @@ const Carousel = () => {
         {CAROUSEL_IMAGES?.map((image) => (
           <div key={image.id} className="shrink-0 relative w-full">
             <img src={image.url} alt="land" className="w-full" />
-            <div className="max-md:hidden top-1/4 w-1/2 left-1/2 -translate-x-1/2 max-w-[50%] absolute text-center text-white text-4xl font-semibold tracking-wider italic flex flex-col">
+            <div className="max-md:hidden top-1/4 w-1/2 left-1/2 -translate-x-1/2 max-w-[50%] absolute text-center text-gray-300 text-4xl tracking-wider italic flex flex-col">
               <Zoom
                 delay={800}
                 duration={1000}

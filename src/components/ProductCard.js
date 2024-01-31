@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
       <img
         src={thumbnail}
         alt="product"
-        className="h-44 w-full object-cover object-left rounded-xl group-hover:-translate-y-9 duration-300  border-gray-800 "
+        className="h-44 w-full rounded-xl group-hover:-translate-y-9 duration-300  border-gray-800 "
       />
       <h2>{title}</h2>
       <h2 className="font-normal">${price}</h2>

@@ -15,10 +15,10 @@ const ThemeContainer = () => {
   };
   return (
     <div className="cursor-pointer" onClick={handleTheme}>
-      <div className="flex justify-between items-center gap-2 pr-2 pl-[7px] py-1 relative rounded-full z-0 duration-300 transition-all dark:bg-slate-800 bg-cyan-700">
-        <span className="absolute h-[23px] w-[25px] dark:left-[31px] left-[5px] rounded-full bg-white -z-10  duration-500 "></span>
-        <WiDaySunny size={20} className="dark:text-gray-500 text-sky-700" />
-        <MdNightsStay size={20} className="text-black" />
+      <div className="flex justify-between items-center gap-2 px-[5px] py-[3px] relative rounded-full z-0 duration-300 transition-all dark:bg-slate-800 bg-cyan-700">
+        <span className="absolute h-[20px] w-[22px] dark:left-[30px] left-[3px] rounded-full bg-white -z-10  duration-500 "></span>
+        <WiDaySunny size={19} className="dark:text-gray-500 text-sky-700" />
+        <MdNightsStay size={19} className="text-black" />
       </div>
     </div>
   );

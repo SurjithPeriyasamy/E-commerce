@@ -1,19 +1,27 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { closeSearch } from "../utils/searchSlice";
 import { IoMdHeartEmpty, IoMdStar } from "react-icons/io";
 import { FaHeart } from "react-icons/fa6";
+import { addCartItems, addQuantity } from "../utils/cartSlice";
+import { FcOk } from "react-icons/fc";
 
 const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState(null);
   const [currIndex, setCurrIndex] = useState(0);
+  const [success, setSuccess] = useState(false);
+
+  const [quantity, setQuantity] = useState(1);
+
   const dispatch = useDispatch();
+  const addedItems = useSelector((store) => store.cart.addedItems);
+
   const { productId } = useParams();
   useEffect(() => {
     dispatch(closeSearch());
     getData();
-  }, []);
+  }, [productId]);
   const getData = async () => {
     const data = await fetch(`https://dummyjson.com/products/${productId}`);
     const json = await data.json();
@@ -30,8 +38,28 @@ const ProductDetail = () => {
     discountPercentage,
   } = productDetail;
 
-  const handleAddQuantity = () => {};
-  const handleReduceQuantity = () => {};
+  const handleAddQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+  const handleReduceQuantity = () => {
+    setQuantity(quantity > 1 ? quantity - 1 : 1);
+  };
+  const handleCartItems = () => {
+    addedItems[title]
+      ? dispatch(addQuantity({ title, quantity }))
+      : dispatch(
+          addCartItems({
+            [title]: {
+              productDetail,
+              quantity,
+              totalPrice: quantity * price,
+            },
+          })
+        );
+    setQuantity(1);
+    setSuccess(true);
+    setTimeout(() => setSuccess(false), 3000);
+  };
   return (
     <div className="max-w-5xl p-5 shadow-xl rounded-lg mx-auto mt-36 h-[500px] flex justify-center">
       <div className="w-3/5 flex flex-col justify-between ">
@@ -85,15 +113,28 @@ const ProductDetail = () => {
           <div className="flex border gap-5 w-fit py-1 px-3">
             <span>Quantity</span>{" "}
             <div className="flex gap-5">
-              <button onClick={handleAddQuantity}>-</button>
-              <span>0</span>
-              <button onClick={handleReduceQuantity}>+</button>
+              <button onClick={handleReduceQuantity}>-</button>
+              <span>{quantity}</span>
+              <button onClick={handleAddQuantity}>+</button>
             </div>
           </div>
-          <button className="bg-[#1D232A] px-5 py-1 text-white rounded-xl">
+          <button
+            onClick={handleCartItems}
+            disabled={success}
+            className="bg-[#1D232A] disabled:bg-opacity-50 px-5 py-1 text-white dark:text-cyan-500 rounded-xl"
+          >
             + Add to cart
           </button>
         </div>
+
+        <p
+          className={
+            (success ? "opacity-100" : "opacity-0 translate-y-5") +
+            " duration-500 text-green-600 flex gap-1 items-center justify-center font-semibold"
+          }
+        >
+          Your items added to the cart <FcOk />
+        </p>
       </div>
     </div>
   );

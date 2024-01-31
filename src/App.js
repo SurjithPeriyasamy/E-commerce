@@ -7,10 +7,11 @@ import SideBar from "./components/SideBar";
 import { closeSideBar } from "./utils/sideBarSlice";
 import { closePopUp } from "./utils/userSlice";
 import { closeSearch } from "./utils/searchSlice";
+import useGetAllProducts from "../src/hooks/useGetAllProducts";
 
 function App() {
   const dispatch = useDispatch();
-
+  useGetAllProducts();
   const handleClick = () => {
     dispatch(closeSideBar());
     dispatch(closePopUp());

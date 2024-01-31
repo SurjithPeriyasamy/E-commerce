@@ -2,10 +2,8 @@ import React from "react";
 import MainContainer from "./MainContainer";
 import CategoryButtons from "./CategoryButtons";
 import { Outlet } from "react-router-dom";
-import useGetAllProducts from "../hooks/useGetAllProducts";
 
 const Body = () => {
-  useGetAllProducts();
   return (
     <div className="comp-top-space space-y-10 max-w-7xl mx-auto">
       <MainContainer />
