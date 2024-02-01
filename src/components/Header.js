@@ -13,14 +13,24 @@ import { togglePopUp } from "../utils/userSlice";
 import { FaCaretDown } from "react-icons/fa";
 import CategoryList from "./CategoryList";
 import useCartItems from "../hooks/useCartItems";
+import WishList from "./WishList";
+import { closeWishList, showWishList } from "../utils/wishListSlice";
+import { IoClose } from "react-icons/io5";
 
 const Header = () => {
   const dispatch = useDispatch();
   const { userPopUp, loggedInUser } = useSelector((store) => store.user);
   const isSearchActive = useSelector((store) => store.search.isSearchActive);
+  const isShowWishList = useSelector((store) => store.wishlist.showWishList);
+
   const { totalCartItems } = useCartItems();
 
-  console.log(totalCartItems);
+  const handleClose = () => {
+    dispatch(closeWishList());
+  };
+  const handleShowWishList = () => {
+    dispatch(showWishList());
+  };
   const handleMenu = () => {
     dispatch(openSideBar());
   };
@@ -89,7 +99,23 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <FaHeart size={20} className="text-red-500" />
+              <FaHeart
+                size={20}
+                onClick={handleShowWishList}
+                className="text-red-500 cursor-pointer"
+              />
+              <div
+                className={`text-black font-normal text-base tracking-normal z-30 absolute top-0 ${
+                  isShowWishList ? "right-0" : "-right-full"
+                } duration-300 bg-white shadow-lg rounded-md max-w-lg w-full`}
+              >
+                <IoClose
+                  onClick={handleClose}
+                  size={25}
+                  className="text-black m-5 cursor-pointer"
+                />
+                <WishList />
+              </div>
             </li>
             <li className="w-full">
               {loggedInUser ? (

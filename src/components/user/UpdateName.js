@@ -41,7 +41,7 @@ const UpdateName = ({ photoURL }) => {
   return (
     <div>
       <div className="flex justify-evenly items-center flex-col max-sm:gap-2 sm:flex-row">
-        <h1 className="font-semibold text-lg w-[15%] hidden sm:block">
+        <h1 className="font-semibold dark:text-[#A6ADBA] text-lg w-[15%] hidden sm:block">
           Username
         </h1>
         <div className="sm:w-1/2 w-full">

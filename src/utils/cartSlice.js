@@ -15,11 +15,11 @@ const cartSlice = createSlice({
 
       const totalQuantity = item.quantity + quantity;
       item.quantity = totalQuantity;
-      item.totalPrice = totalQuantity * item.productDetail.price;
       if (item.quantity < 1) {
         delete state.addedItems[id];
         return;
       }
+      item.totalPrice = totalQuantity * item.productDetail.price;
     },
     removeItem: (state, action) => {
       delete state.addedItems[action.payload];

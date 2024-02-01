@@ -25,8 +25,8 @@ const ProductDetail = () => {
   const { images } = productDetail;
 
   return (
-    <div className="max-w-5xl p-5 shadow-xl rounded-lg mx-auto mt-36 h-[500px] flex justify-center">
-      <div className="w-3/5 flex flex-col justify-between ">
+    <div className="md:max-w-5xl w-full p-5 shadow-xl rounded-lg mx-auto mt-36 md:h-[500px] flex flex-col md:flex-row justify-center">
+      <div className="md:w-3/5 flex flex-col justify-between ">
         <img
           src={images[currIndex]}
           alt="products"

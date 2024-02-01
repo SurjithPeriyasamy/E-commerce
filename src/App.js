@@ -8,6 +8,7 @@ import { closeSideBar } from "./utils/sideBarSlice";
 import { closePopUp } from "./utils/userSlice";
 import { closeSearch } from "./utils/searchSlice";
 import useGetAllProducts from "../src/hooks/useGetAllProducts";
+import { closeWishList } from "./utils/wishListSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function App() {
     dispatch(closeSideBar());
     dispatch(closePopUp());
     dispatch(closeSearch());
+    dispatch(closeWishList());
   };
   return (
     <div className={`font-Lato `}>

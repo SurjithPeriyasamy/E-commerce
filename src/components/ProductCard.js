@@ -1,4 +1,5 @@
 import React from "react";
+import { FaHeart } from "react-icons/fa6";
 import { IoMdHeartEmpty } from "react-icons/io";
 
 const ProductCard = ({ product }) => {
@@ -19,8 +20,9 @@ const ProductCard = ({ product }) => {
           </span>
           <span className="absolute -z-10 dark:bg-green-700 bg-gray-900 h-full group-hover:w-full w-0 duration-300 top-0 right-0 rounded-full"></span>
         </button>
-        <button className="rounded-full  p-2 border border-gray-300 ">
+        <button className="rounded-full relative flex justify-center items-center  p-2 border border-gray-300 ">
           <IoMdHeartEmpty />
+          <FaHeart className="absolute text-red-600 duration-300 h-0 origin-bottom group-hover:h-full" />
         </button>
       </div>
     </div>

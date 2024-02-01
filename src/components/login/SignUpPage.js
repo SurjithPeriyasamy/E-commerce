@@ -17,7 +17,7 @@ const SignUpPage = () => {
 
   return (
     <div className="bg-slate-800 h-screen">
-      <div className="w-[75%] 2xl:w-[55%] flex flex-col gap-10 items-center absolute  top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+      <div className="w-[75%] 2xl:w-[55%] max-w-4xl flex flex-col gap-10 items-center absolute  top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
         <div className="text-white h-20">
           <Brand />
         </div>

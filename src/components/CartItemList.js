@@ -34,14 +34,14 @@ const CartItemList = ({ item }) => {
           </Link>
           <Link
             to={`/products/category/${category}`}
-            className="text-gray-600 text-sm "
+            className="text-gray-600 dark:text-gray-400 text-sm "
           >
             Category : {category}
           </Link>
         </div>
       </div>
       <div>$ {price}</div>
-      <div className="flex gap-3 items-center border border-black rounded-md py-1 px-3">
+      <div className="flex gap-3 items-center border border-black dark:border-white rounded-md py-1 px-3">
         <button onClick={handleReduceQuantity} className="text-lg">
           -
         </button>
@@ -52,7 +52,7 @@ const CartItemList = ({ item }) => {
       </div>
       <div>$ {item.totalPrice}</div>
       <button onClick={handleRemove}>
-        <MdDeleteSweep size={25} className="text-red-600" />
+        <MdDeleteSweep size={25} className="text-red-600 dark:text-cyan-500" />
       </button>
     </div>
   );

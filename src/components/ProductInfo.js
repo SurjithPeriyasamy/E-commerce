@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa6";
 import { addCartItems, updateQuantity } from "../utils/cartSlice";
 import { FcOk } from "react-icons/fc";
 import { useDispatch, useSelector } from "react-redux";
-import { addWishList } from "../utils/wishListSlice";
+import { updateWishList } from "../utils/wishListSlice";
 
 const ProductInfo = ({ productDetail }) => {
   const [success, setSuccess] = useState(false);
@@ -15,11 +15,13 @@ const ProductInfo = ({ productDetail }) => {
 
   const addedItems = useSelector((store) => store.cart.addedItems);
 
+  const wishListItems = useSelector((store) => store.wishlist.wishListItems);
+
   const { title, description, rating, brand, price, discountPercentage, id } =
     productDetail;
 
   const handleWishList = () => {
-    dispatch(addWishList());
+    dispatch(updateWishList({ [id]: { productDetail } }));
   };
 
   const handleAddQuantity = () => {
@@ -47,7 +49,7 @@ const ProductInfo = ({ productDetail }) => {
     setTimeout(() => setSuccess(false), 2500);
   };
   return (
-    <div className="w-2/5 space-y-5 ">
+    <div className="md:w-2/5 space-y-5 ">
       <h3 className="text-gray-500 font-semibold tracking-wider">{brand}</h3>
       <h1 className="font-semibold tracking-wider text-4xl">{title}</h1>
 
@@ -72,11 +74,16 @@ const ProductInfo = ({ productDetail }) => {
         className="flex justify-center mx-auto border py-1 px-4 rounded-lg items-center gap-3"
       >
         Wishlist
-        <span className="rounded-full  p-2 border border-gray-300 ">
+        <span className="rounded-full  p-2 border border-gray-300 relative flex justify-center items-center">
           <IoMdHeartEmpty />
+          <FaHeart
+            className={`duration-500 text-red-600 absolute ${
+              wishListItems[id] ? " h-full" : "h-0"
+            }`}
+          />
         </span>
       </button>
-      <div className="flex max-w-[90%] justify-between mx-auto">
+      <div className="flex flex-col lg:flex-row max-w-[90%] lg:justify-between max-lg:items-center max-lg:gap-2 mx-auto">
         <div className="flex border gap-5 w-fit py-1 px-3">
           <span>Quantity</span>{" "}
           <div className="flex gap-5">

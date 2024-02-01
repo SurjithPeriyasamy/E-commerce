@@ -36,7 +36,7 @@ const EditUserProfile = () => {
   if (!loggedInUser) return null;
   return (
     <div className="comp-top-space">
-      <div className="absolute max-lg:top-[60%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-teal-600 to-teal-200 rounded-3xl lg:w-1/2 w-11/12 max-[400px]:w-full p-3">
+      <div className="absolute max-lg:top-[60%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 dark:bg-gradient-to-r dark:from-[#2A323C] dark:to-[#2A323C] bg-gradient-to-r from-teal-600 to-teal-200 rounded-3xl lg:w-1/2 w-11/12 max-[400px]:w-full p-3">
         <UpdatePhoto
           changePic={changePic}
           setChangePic={setChangePic}
@@ -53,10 +53,10 @@ const EditUserProfile = () => {
             />
             <RiImageEditFill
               onClick={() => setChangePic(true)}
-              className="absolute bottom-3 right-2 cursor-pointer text-white bg-slate-900 rounded-full p-[2px] shadow-lg text-2xl "
+              className="absolute bottom-3 right-2 cursor-pointer text-white bg-slate-900 dark:bg-black rounded-full p-[3px] shadow-lg text-2xl "
             />
           </div>
-          <h2 className="text-xl tracking-widest font-bold font-Pacifico">
+          <h2 className="text-xl tracking-widest font-bold dark:text-[#A6ADBA]">
             Update Your Profile
           </h2>
           <div className="text-white w-full flex flex-col gap-5">
