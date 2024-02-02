@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import useWishListItems from "../hooks/useWishListItems";
-import { updateWishList } from "../utils/wishListSlice";
+import { clearWishList, updateWishList } from "../utils/wishListSlice";
 import { FaHeart } from "react-icons/fa6";
 import { addCartItems } from "../utils/cartSlice";
 import { FcOk } from "react-icons/fc";
@@ -9,6 +9,11 @@ const WishList = () => {
   const wishListArray = useWishListItems();
   const cartItems = useSelector((store) => store.cart.addedItems);
   const dispatch = useDispatch();
+
+  const handleWishList = () => {
+    dispatch(clearWishList());
+  };
+
   const handleCart = (id, productDetail, price) => {
     dispatch(
       addCartItems({
@@ -25,7 +30,16 @@ const WishList = () => {
         My Wishlist <FaHeart className="text-red-600" /> ({wishListArray.length}{" "}
         items)
       </h1>
-
+      {wishListArray.length && (
+        <div className=" ml-auto w-fit">
+          <button
+            onClick={handleWishList}
+            className="bg-slate-800 text-white px-3 py-[2px] rounded-md"
+          >
+            Clear All
+          </button>
+        </div>
+      )}
       {wishListArray.length ? (
         wishListArray.map((item) => {
           const { thumbnail, brand, category, title, id, price } =
@@ -50,13 +64,16 @@ const WishList = () => {
                 >
                   <button
                     disabled={cartItems[id]}
-                    className="disabled:opacity-70 flex gap-2 items-center"
+                    className="disabled:opacity-90 bg-slate-800 py-1 px-3 rounded-md text-white flex gap-2 items-center"
                   >
                     {cartItems[id] ? "Added in the cart " : "+Add to cart"}
                     {cartItems[id] && <FcOk />}
                   </button>
 
-                  <button onClick={() => handleClick(id, item.productDetail)}>
+                  <button
+                    className="text-red-700 font-semibold opacity-90"
+                    onClick={() => handleClick(id, item.productDetail)}
+                  >
                     Remove from wishlist
                   </button>
                 </div>

@@ -18,9 +18,12 @@ const wishListSlice = createSlice({
       if (state.wishListItems[key[0]]) delete state.wishListItems[key[0]];
       else state.wishListItems = { ...state.wishListItems, ...action.payload };
     },
+    clearWishList: (state) => {
+      state.wishListItems = {};
+    },
   },
 });
 
-export const { updateWishList, showWishList, closeWishList } =
+export const { updateWishList, showWishList, closeWishList, clearWishList } =
   wishListSlice.actions;
 export default wishListSlice.reducer;
