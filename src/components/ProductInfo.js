@@ -49,11 +49,13 @@ const ProductInfo = ({ productDetail }) => {
     setTimeout(() => setSuccess(false), 2500);
   };
   return (
-    <div className="md:w-2/5 space-y-5 ">
+    <div className="md:w-2/5 space-y-5 dark:text-gray-400">
       <h3 className="text-gray-500 font-semibold tracking-wider">{brand}</h3>
-      <h1 className="font-semibold tracking-wider text-4xl">{title}</h1>
+      <h1 className="font-semibold dark:text-gray-300 tracking-wider text-4xl">
+        {title}
+      </h1>
 
-      <p className="tracking-wide">{description}</p>
+      <p className="tracking-wide ">{description}</p>
       <h5 className="flex items-center p-1 px-3 font-semibold text-sm shadow-lg w-fit rounded-lg">
         <IoMdStar size={20} className="text-green-700 " />
         {rating}
@@ -74,7 +76,11 @@ const ProductInfo = ({ productDetail }) => {
         className="flex justify-center mx-auto border py-1 px-4 rounded-lg items-center gap-3"
       >
         Wishlist
-        <span className="rounded-full  p-2 border border-gray-300 relative flex justify-center items-center">
+        <span
+          className={
+            "rounded-full  p-2 border border-gray-300 relative flex justify-center items-center"
+          }
+        >
           <IoMdHeartEmpty />
           <FaHeart
             className={`duration-500 text-red-600 absolute ${

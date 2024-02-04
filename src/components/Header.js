@@ -14,8 +14,7 @@ import { FaCaretDown } from "react-icons/fa";
 import CategoryList from "./CategoryList";
 import useCartItems from "../hooks/useCartItems";
 import WishList from "./WishList";
-import { closeWishList, showWishList } from "../utils/wishListSlice";
-import { IoClose } from "react-icons/io5";
+import { showWishList } from "../utils/wishListSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -25,9 +24,6 @@ const Header = () => {
 
   const { totalCartItems } = useCartItems();
 
-  const handleClose = () => {
-    dispatch(closeWishList());
-  };
   const handleShowWishList = () => {
     dispatch(showWishList());
   };
@@ -109,11 +105,6 @@ const Header = () => {
                   isShowWishList ? "right-0" : "-right-full"
                 } duration-300 bg-white shadow-lg rounded-md max-w-lg w-full`}
               >
-                <IoClose
-                  onClick={handleClose}
-                  size={25}
-                  className="text-black m-5 cursor-pointer"
-                />
                 <WishList />
               </div>
             </li>
