@@ -46,12 +46,12 @@ const UpdatePhoto = ({
         onClick={() => setChangePic(false)}
         className="absolute right-4 text-2xl cursor-pointer"
       />
-      <div className="h-28 w-28 ">
+      <div className="size-28">
         <img
           src={loggedInUser?.photoURL}
           alt="use"
           className={
-            "h-full w-full rounded-full p-1 " +
+            "size-full rounded-full p-1 " +
             (loading ? "animate-pulse-fast" : "")
           }
         />

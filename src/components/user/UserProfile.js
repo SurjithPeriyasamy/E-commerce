@@ -49,7 +49,7 @@ const EditUserProfile = () => {
             <img
               src={loggedInUser?.photoURL}
               alt="use"
-              className="h-28 w-28 mt-2 rounded-full p-1"
+              className="size-28 mt-2 rounded-full p-1"
             />
             <RiImageEditFill
               onClick={() => setChangePic(true)}

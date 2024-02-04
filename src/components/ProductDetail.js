@@ -25,7 +25,7 @@ const ProductDetail = () => {
   const { images } = productDetail;
 
   return (
-    <div className="md:max-w-5xl w-full p-5 shadow-xl rounded-lg mx-auto mt-36 md:h-[500px] flex flex-col md:flex-row justify-center">
+    <div className="md:max-w-5xl w-full p-5 shadow-xl rounded-lg mx-auto mt-36 md:h-[500px] flex flex-col max-md:gap-5 md:flex-row justify-center">
       <div className="md:w-3/5 flex flex-col justify-between ">
         <img
           src={images[currIndex]}
@@ -39,8 +39,8 @@ const ProductDetail = () => {
               onClick={() => setCurrIndex(index)}
               key={index}
               className={`${
-                currIndex === index ? "opacity-100" : "opacity-50"
-              } max-h-28 max-w-28 border p-1 cursor-pointer duration-500`}
+                currIndex === index ? "opacity-100 scale-125" : "opacity-50"
+              } max-h-24 max-w-28 border p-1 cursor-pointer duration-500`}
             >
               <img src={image} alt="diff" className="h-full w-full" />
             </div>
