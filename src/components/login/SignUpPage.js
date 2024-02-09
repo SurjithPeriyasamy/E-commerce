@@ -22,10 +22,10 @@ const SignUpPage = () => {
           <Brand />
         </div>
         <div className="w-full flex justify-center h-[450px] shadow-lg rounded-lg shadow-fuchsia-500">
-          <div className="hidden md:block">
+          <div className="hidden md:block w-[85%]">
             <img src={logDark} alt="signdark" className="h-full" />
           </div>
-          <div className=" text-white lg:w-1/2 sm:w-3/4 px-5 flex flex-col gap-1 items-center justify-around">
+          <div className=" text-white w-full px-5 flex flex-col gap-1 items-center justify-around">
             <h1 className="font-bold text-2xl text-cyan-400 my-2">Welcome!</h1>
             {isForgetPassword ? (
               <ForgetPassForm />

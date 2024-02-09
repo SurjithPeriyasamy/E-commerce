@@ -14,11 +14,11 @@ const Carousel = () => {
     dispatch(closeSideBar());
   }, []);
 
-  // useEffect(() => {
-  //   const autoPlay = setInterval(handleNext, 1500);
+  useEffect(() => {
+    const autoPlay = setInterval(handleNext, 1800);
 
-  //   return () => clearInterval(autoPlay);
-  // }, []);
+    return () => clearInterval(autoPlay);
+  }, []);
   const handleNext = () => {
     setCurrIndex((prev) =>
       prev === CAROUSEL_IMAGES.length - 1 ? 0 : prev + 1
@@ -36,31 +36,34 @@ const Carousel = () => {
         className="flex duration-300 "
         style={{ transform: `translateX(-${currIndex * 100}%)` }}
       >
-        {CAROUSEL_IMAGES?.map((image) => (
-          <div key={image.id} className="shrink-0 relative w-full">
-            <img src={image.url} alt="land" />
-            <div className="max-md:hidden top-1/4 w-1/2 left-1/2 -translate-x-1/2 max-w-[50%] absolute text-center text-gray-300 text-4xl tracking-wider italic flex flex-col">
-              <Zoom
-                delay={800}
-                duration={1000}
-                className="first-letter:text-7xl"
-              >
-                {image.slogan}
-              </Zoom>
-            </div>
-          </div>
-        ))}
+        {CAROUSEL_IMAGES.map(
+          (image) =>
+            image && (
+              <div key={image.id} className="shrink-0 relative w-full">
+                <img src={image.url} alt="land" />
+                <div className="max-md:hidden top-1/4 w-1/2 left-1/2 -translate-x-1/2 max-w-[50%] absolute text-center text-gray-300 text-4xl tracking-wider italic flex flex-col">
+                  <Zoom
+                    delay={800}
+                    duration={1000}
+                    className="first-letter:text-7xl"
+                  >
+                    {image.slogan}
+                  </Zoom>
+                </div>
+              </div>
+            )
+        )}
       </div>
-      <div className="absolute inset-0 z-30 px-2 group flex justify-between items-center w-full">
+      <div className="absolute inset-0 z-30 px-2 group flex justify-between items-center w-full  *:max-sm:bg-white *:max-sm:bg-opacity-30  *:max-sm:scale-75 *:cursor-pointer *:h-20 *:px-2 *:py-3">
         <FaChevronLeft
           onClick={handlePrevious}
           size={35}
-          className="group-hover:bg-white duration-300 group-hover:bg-opacity-30 cursor-pointer h-20 px-2 py-3"
+          className="group-hover:bg-white duration-300 group-hover:bg-opacity-30"
         />
         <FaChevronRight
           onClick={handleNext}
           size={35}
-          className="group-hover:bg-white duration-300 group-hover:bg-opacity-30 cursor-pointer h-20 px-2 py-3"
+          className="group-hover:bg-white duration-300 group-hover:bg-opacity-30"
         />
       </div>
       <div className="absolute flex text-white py-5 inset-0 items-end justify-center w-full">

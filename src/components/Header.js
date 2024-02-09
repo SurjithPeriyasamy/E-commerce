@@ -112,7 +112,7 @@ const Header = () => {
               {loggedInUser ? (
                 <img
                   onClick={handlePopUp}
-                  src={loggedInUser?.photoURL}
+                  src={loggedInUser.photoURL}
                   alt="user"
                   className="h-[45px] w-[45px] cursor-pointer rounded-full"
                 />

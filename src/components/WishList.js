@@ -74,11 +74,11 @@ const WishList = () => {
                     <h4 className="text-gray-600 text-xs font-semibold">
                       Category : {category}
                     </h4>
-                    <div
-                      onClick={() => handleCart(id, item.productDetail, price)}
-                      className="flex flex-col gap-1 mt-1 items-center text-sm"
-                    >
+                    <div className="flex flex-col gap-1 mt-1 items-center text-sm">
                       <button
+                        onClick={() =>
+                          handleCart(id, item.productDetail, price)
+                        }
                         disabled={cartItems[id]}
                         className="disabled:opacity-90 bg-slate-800 py-1 px-3 rounded-md text-white flex gap-2 items-center"
                       >

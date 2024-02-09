@@ -37,7 +37,7 @@ const UserPopUp = () => {
         </h2>
         <div className="border-4 rounded-full border-white dark:border-fuchsia-500 p-1">
           <img
-            src={loggedInUser?.photoURL}
+            src={loggedInUser.photoURL}
             alt="use"
             className="h-20 w-20 rounded-full"
           />

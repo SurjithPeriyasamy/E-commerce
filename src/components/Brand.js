@@ -14,7 +14,7 @@ const Brand = () => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        const { email, displayName, photoURL } = user;
+        const { email, displayName, photoURL } = auth.currentUser;
         dispatch(addUser({ email, displayName, photoURL }));
         navigate("/");
         // ...
@@ -28,7 +28,13 @@ const Brand = () => {
   }, []);
   return (
     <Link to={"/"}>
-      <img src={BrandLogo} alt="brand" className="w-full h-full" />
+      <img
+        src={
+          "https://ik.imagekit.io/surjith005/brandLogo.png?updatedAt=1707335215706"
+        }
+        alt="brand"
+        className="w-full h-full"
+      />
     </Link>
   );
 };

@@ -2,7 +2,10 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../utils/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../utils/userSlice";
 const GoogleSignIn = () => {
+  const dispatch = useDispatch();
   return (
     <button
       className="p-1 flex items-center rounded-full w-fit hover:scale-125 duration-300"
@@ -14,6 +17,8 @@ const GoogleSignIn = () => {
             const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
+            const { email, displayName, photoURL } = user;
+            dispatch(addUser({ email, displayName, photoURL }));
             // IdP data available using getAdditionalUserInfo(result)
             // ...
           })
