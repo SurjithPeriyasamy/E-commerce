@@ -31,6 +31,7 @@ const GoogleSignIn = () => {
             // The AuthCredential type that was used.
             const credential = GoogleAuthProvider.credentialFromError(error);
             // ...
+            console.log(credential, errorMessage);
           });
       }}
     >

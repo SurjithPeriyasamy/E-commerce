@@ -40,8 +40,14 @@ const Carousel = () => {
           (image) =>
             image && (
               <div key={image.id} className="shrink-0 relative w-full">
-                <img src={image.url} alt="land" />
-                <div className="max-md:hidden top-1/4 w-1/2 left-1/2 -translate-x-1/2 max-w-[50%] absolute text-center text-gray-300 text-4xl tracking-wider italic flex flex-col">
+                <img
+                  rel="preload"
+                  src={image.url}
+                  alt="land"
+                  loading="eager"
+                  fetchpriority="high"
+                />
+                <div className="font-sans max-md:hidden top-1/4 w-1/2 left-1/2 -translate-x-1/2 max-w-[50%] absolute text-center text-gray-300 text-4xl tracking-wider italic flex flex-col">
                   <Zoom
                     delay={800}
                     duration={1000}
