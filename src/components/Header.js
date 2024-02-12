@@ -114,7 +114,7 @@ const Header = () => {
                   onClick={handlePopUp}
                   src={loggedInUser.photoURL}
                   alt="user"
-                  className="h-[45px] w-[45px] cursor-pointer rounded-full"
+                  className="size-10 cursor-pointer rounded-full"
                 />
               ) : (
                 <Link to={"/signUp"} className="">

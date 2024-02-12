@@ -3,10 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const searchSlice = createSlice({
   name: "search",
   initialState: {
+    allSearchProducts: [],
     searchCache: {},
     isSearchActive: false,
   },
   reducers: {
+    addAllProducts: (state, { payload }) => {
+      state.allSearchProducts = payload;
+    },
     addSearchCache: (state, action) => {
       state.searchCache = { ...state.searchCache, ...action.payload };
     },
@@ -19,5 +23,6 @@ const searchSlice = createSlice({
   },
 });
 
-export const { addSearchCache, openSearch, closeSearch } = searchSlice.actions;
+export const { addSearchCache, openSearch, closeSearch, addAllProducts } =
+  searchSlice.actions;
 export default searchSlice.reducer;

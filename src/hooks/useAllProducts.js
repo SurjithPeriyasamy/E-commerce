@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProducts } from "../utils/productSlice";
 
 const useAllProducts = (category, setFilter, setLoading) => {
-  const [productsCount, setProductsCount] = useState(20);
+  const [productsCount, setProductsCount] = useState(10);
   const products = useSelector((store) => store.products.category);
   const dispatch = useDispatch();
 

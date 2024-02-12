@@ -53,7 +53,7 @@ const EditUserProfile = () => {
             />
             <RiImageEditFill
               onClick={() => setChangePic(true)}
-              className="absolute bottom-3 right-2 cursor-pointer text-white bg-slate-900 dark:bg-black rounded-full p-[3px] shadow-lg text-2xl "
+              className="absolute bottom-3 right-2 cursor-pointer text-black bg-white rounded-full p-[3px] shadow-lg text-2xl "
             />
           </div>
           <h2 className="text-xl tracking-widest font-bold dark:text-[#A6ADBA]">

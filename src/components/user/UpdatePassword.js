@@ -42,7 +42,9 @@ const UpdatePassword = () => {
           {error && <ErrorMessage error={error} />}
           {success && (
             <SuccessMessage
-              styles={"text-black font-semibold text-xs tracking-wider"}
+              styles={
+                "text-black dark:text-white font-semibold text-xs tracking-wider"
+              }
               typeName={"Password"}
             />
           )}

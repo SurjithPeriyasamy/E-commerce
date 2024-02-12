@@ -5,7 +5,7 @@ import { clearCart } from "../utils/cartSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { totalCartItems, cartItemsArray } = useCartItems();
+  const { totalCartItems, cartItemsArray, totalPrice } = useCartItems();
   const handleCart = () => {
     dispatch(clearCart());
   };
@@ -35,6 +35,30 @@ const Cart = () => {
             {cartItemsArray.map((item) => (
               <CartItemList key={item.productDetail.id} item={item} />
             ))}
+          </div>
+          <div className="md:w-[50%] group shadow-xl duration-300 p-3">
+            <h3 className="text-xl my-5 font-semibold tracking-wider ">
+              Cart Totals
+            </h3>
+            <div className="dark:text-gray-400 *:flex *:justify-between space-y-5">
+              <div>
+                <span>Subtotal</span>
+                <span>${totalPrice}</span>
+              </div>
+              <div>
+                <span>Shipping</span>
+                <span>Free</span>
+              </div>
+              <div className="dark:text-white font-semibold">
+                <span>Total</span>
+                <span>${totalPrice}</span>
+              </div>
+              <button
+                className={` shadow-lg text-sm py-2 px-3 bg-gray-800 text-cyan-500 font-semibold rounded-md`}
+              >
+                PROCEED TO CHECKOUT
+              </button>
+            </div>
           </div>
         </div>
       ) : (

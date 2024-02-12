@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa6";
 import { MdStarRate } from "react-icons/md";
@@ -14,7 +14,10 @@ const ProductsContainer = () => {
   const toggleTopRate = () => {
     setFilter((prev) => (prev === "topRated" ? "noFilter" : "topRated"));
   };
-
+  const WholeProducts = useMemo(
+    () => AllProductsContainer,
+    [productCategory, filter]
+  );
   return (
     <div className="w-[90%] mx-auto space-y-5 pb-12">
       <div className="flex items-center gap-1 ml-4 text-gray-500">
@@ -43,7 +46,7 @@ const ProductsContainer = () => {
         </div>
 
         {productCategory === "allProducts" ? (
-          <AllProductsContainer
+          <WholeProducts
             filter={filter}
             category={productCategory}
             setFilter={setFilter}

@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addSearchCache } from "../utils/searchSlice";
 
 const useSearchSuggestion = (searchText) => {
   const [suggestions, setSuggestions] = useState([]);
   const dispatch = useDispatch();
-  const allProducts = useSelector((store) => store.products.allProducts);
-  const { searchCache, isSearchActive } = useSelector((store) => store.search);
+  const { searchCache, isSearchActive, allSearchProducts } = useSelector(
+    (store) => store.search
+  );
 
-  const getSearchResults = () => {
-    const list = allProducts.filter((product) =>
+  const getSearchResults = useCallback(() => {
+    const list = allSearchProducts.filter((product) =>
       product.title
         .replace(/ /g, "")
         .toLowerCase()
@@ -17,7 +18,7 @@ const useSearchSuggestion = (searchText) => {
     );
     dispatch(addSearchCache({ [searchText]: list }));
     setSuggestions(list);
-  };
+  }, [searchText]);
   useEffect(() => {
     const timer = setTimeout(() => {
       searchCache[searchText]

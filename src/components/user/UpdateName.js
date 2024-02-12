@@ -54,7 +54,9 @@ const UpdateName = ({ photoURL }) => {
           {error && <ErrorMessage error={error} />}
           {success && (
             <UpdateSuccess
-              styles={"text-black font-semibold text-xs tracking-wider"}
+              styles={
+                "text-black dark:text-white font-semibold text-xs tracking-wider"
+              }
               typeName={"Name"}
             />
           )}

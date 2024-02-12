@@ -11,11 +11,11 @@ const useCartItems = () => {
     0
   );
 
-  //   const totalPrice = Object.keys(addedItems).reduce(
-  //     (acc, curr) => addedItems[curr].totalPrice + acc,
-  //     0
-  //   );
+  const totalPrice = keys.reduce(
+    (acc, curr) => addedItems[curr].totalPrice + acc,
+    0
+  );
 
-  return { cartItemsArray, totalCartItems };
+  return { cartItemsArray, totalCartItems, totalPrice };
 };
 export default useCartItems;

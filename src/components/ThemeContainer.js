@@ -1,17 +1,13 @@
 import React from "react";
 import { WiDaySunny } from "react-icons/wi";
 import { MdNightsStay } from "react-icons/md";
-import { useDispatch } from "react-redux";
-import { toggleTheme } from "../utils/themeSlice";
 
 const ThemeContainer = () => {
-  const dispatch = useDispatch();
   const handleTheme = () => {
     const root = document.body;
     root.classList.contains("dark")
       ? root.classList.remove("dark")
       : root.classList.add("dark");
-    dispatch(toggleTheme());
   };
   return (
     <div className="cursor-pointer" onClick={handleTheme}>
