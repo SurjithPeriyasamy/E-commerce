@@ -14,11 +14,12 @@ import { LuUser } from "react-icons/lu";
 import CategoryList from "./CategoryList";
 import { FaCaretDown } from "react-icons/fa6";
 import { useState } from "react";
-
+import useCategoryList from "../hooks/useCategoryList";
 const SideBar = () => {
   const [showCategoryList, setShowCategoryList] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const categoryList = useCategoryList();
   const loggedInUser = useSelector((store) => store.user.loggedInUser);
   const { isMenuOpen } = useSelector((store) => store.sideBar);
 
@@ -71,14 +72,14 @@ const SideBar = () => {
         <span className="font-semibold">Change Theme</span>
         <ThemeContainer />
       </div>
-      <ul className="sm:space-y-6 space-y-2 sm:pt-10 pt-2">
-        <li className="border-b-2 pb-3">
+      <ul className="sm:space-y-6 *:py-7 space-y-2 sm:pt-10 pt-2">
+        <li>
           <Link to={"/"} className="flex gap-1 items-center">
             <FaHome />
             Home
           </Link>
         </li>
-        <li className="border-b-2 pb-3">
+        <li>
           <div
             onClick={() => setShowCategoryList(!showCategoryList)}
             className="flex gap-1 items-center cursor-pointer"
@@ -91,13 +92,17 @@ const SideBar = () => {
               } duration-300`}
             />
           </div>
-          {showCategoryList && (
-            <ul onClick={handleMenu} className="flex flex-col pl-10 ">
-              <CategoryList />
-            </ul>
-          )}
+          <div
+            className={`${
+              showCategoryList
+                ? `grid-rows-[${categoryList.length}fr] opacity-100`
+                : "opacity-0 grid-rows-[0fr] h-0"
+            }  duration-300 ease-in-out pl-10 grid overflow-hidden`}
+          >
+            <CategoryList />
+          </div>
         </li>
-        <li className="border-b-2 pb-3">
+        <li>
           <Link to={"/about"} className="flex gap-1 items-center">
             <FcAbout />
             About
@@ -106,13 +111,13 @@ const SideBar = () => {
 
         {loggedInUser && (
           <>
-            <li className="border-b-2 pb-3">
+            <li>
               <Link to={"/user"} className="flex gap-1 items-center">
                 <ImProfile />
                 Manage Your Profile
               </Link>
             </li>
-            <li className="border-b-2 pb-3">
+            <li>
               <button onClick={handleUser} className="flex gap-1 items-center">
                 <PiSignOutBold />
                 Sign out

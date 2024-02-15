@@ -26,13 +26,14 @@ const ProductDetail = () => {
 
   return (
     <div className="md:max-w-5xl w-full p-5 shadow-xl rounded-lg mx-auto mt-36 md:h-[500px] flex flex-col max-md:gap-5 md:flex-row justify-center">
-      <div className="md:w-3/5 flex flex-col justify-between ">
-        <img
-          src={images[currIndex]}
-          alt="products"
-          className="h-3/4 w-full p-5 object-contain "
-        />
-
+      <div className="md:w-3/5 max-md:h-[400px] flex flex-col justify-between ">
+        <div className="h-3/4">
+          <img
+            src={images[currIndex]}
+            alt="products"
+            className="h-full w-full p-5 object-contain "
+          />
+        </div>
         <div className="flex justify-around w-full">
           {images.map((image, index) => (
             <div

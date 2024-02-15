@@ -26,7 +26,7 @@ const ProductsContainer = () => {
         <span className="first-letter:capitalize">{productCategory}</span>
       </div>
       <div className="dark:text-[#A6ADBA]">
-        <div className="flex gap-20 mx-auto mb-10 bg-gray-600 px-5 py-2 dark:*:bg-gray-700 dark:text-gray-200 shadow-lg rounded-b-lg w-fit items-center sticky top-16 z-20">
+        <div className="flex gap-20 mx-auto mb-10 bg-gray-800 px-8 py-3 rounded-t-md dark:*:bg-gray-700 dark:text-gray-200 shadow-lg rounded-b-lg w-fit items-center sticky top-16 z-20">
           <button
             onClick={toggleTopRate}
             className="flex gap-1 items-center bg-slate-300  rounded-lg px-3 py-1"

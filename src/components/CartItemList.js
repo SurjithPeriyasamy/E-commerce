@@ -20,7 +20,7 @@ const CartItemList = ({ item }) => {
       key={id}
       className="grid grid-cols-5 border-b-2 justify-items-center place-items-center py-2"
     >
-      <div className="flex gap-2 max-md:flex-col ml-4">
+      <div className="flex gap-2 max-md:flex-col ml-7">
         <Link to={`/products/${id}`} className="h-16 w-24">
           <img
             src={thumbnail}

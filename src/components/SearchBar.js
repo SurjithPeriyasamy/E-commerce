@@ -49,7 +49,11 @@ const SearchBar = () => {
                 to={`products/${s.id}`}
                 className="flex items-center gap-5 text-sm font-bold p-1 duration-300 rounded-md hover:bg-gray-300 dark:hover:bg-gray-700"
               >
-                <img src={s.thumbnail} alt="thumbnail" className="h-11 w-11" />{" "}
+                <img
+                  src={s.thumbnail}
+                  alt="thumbnail"
+                  className="h-11 w-11 rounded-sm"
+                />{" "}
                 {s.title} <span>{}</span>
               </Link>
             </Slide>

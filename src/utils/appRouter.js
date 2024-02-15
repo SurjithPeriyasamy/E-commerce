@@ -9,6 +9,7 @@ import UserProfile from "../components/user/UserProfile";
 import ProductDetail from "../components/ProductDetail";
 import ProductsContainer from "../components/ProductsContainer";
 import ProductsCategory from "../components/ProductCategory";
+import Stepper from "../components/stepper/Stepper";
 
 export const appRouter = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/checkout",
+        element: <Stepper />,
       },
     ],
   },

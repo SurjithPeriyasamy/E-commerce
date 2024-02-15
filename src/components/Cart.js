@@ -2,6 +2,8 @@ import { useDispatch } from "react-redux";
 import useCartItems from "../hooks/useCartItems";
 import CartItemList from "./CartItemList";
 import { clearCart } from "../utils/cartSlice";
+import Stepper from "./stepper/Stepper";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -36,7 +38,7 @@ const Cart = () => {
               <CartItemList key={item.productDetail.id} item={item} />
             ))}
           </div>
-          <div className="md:w-[50%] group shadow-xl duration-300 p-3">
+          <div className="md:w-[50%] md:ml-10 w-11/12 max-md:mx-auto bg-teal-200 rounded-lg origin-top-left group hover:rotate-3 shadow-xl duration-1000 transition-transform p-3">
             <h3 className="text-xl my-5 font-semibold tracking-wider ">
               Cart Totals
             </h3>
@@ -53,11 +55,12 @@ const Cart = () => {
                 <span>Total</span>
                 <span>${totalPrice}</span>
               </div>
-              <button
-                className={` shadow-lg text-sm py-2 px-3 bg-gray-800 text-cyan-500 font-semibold rounded-md`}
+              <Link
+                to={"/checkout"}
+                className={` duration-1000 transition-transform shadow-lg text-sm py-2 px-3 bg-gray-800 text-cyan-500 font-semibold rounded-md`}
               >
                 PROCEED TO CHECKOUT
-              </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -23,7 +23,6 @@ const About = () => {
     const data = await fetch("https://api.github.com/users/surjithperiyasamy");
     const json = await data.json();
     setMe(json);
-    console.log(json);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,18 +44,25 @@ const About = () => {
         />
         <div className="flex text-white justify-evenly">
           <Link
+            className="hover:text-cyan-500"
             to="https://www.linkedin.com/in/surjith-p-dev005"
             target="_blank"
           >
             <FaLinkedin size={35} />
           </Link>
-          <Link to="https://wa.me/919003393417" target="_blank">
+          <Link
+            className="hover:text-cyan-500"
+            to="https://wa.me/919003393417"
+            target="_blank"
+          >
             <BsWhatsapp size={35} />
           </Link>
         </div>
       </div>
       <div className="xl:w-1/2 md:space-y-10 space-y-5 w-full">
-        <h3 className="text-white md:text-3xl text-2xl">Send Message To US</h3>
+        <h3 className="text-white dark:text-gray-500 md:text-3xl text-2xl">
+          Send Message To US
+        </h3>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col h-full w-full gap-7 *:rounded-xl *:py-[6px] *:px-3  *:outline-none"
