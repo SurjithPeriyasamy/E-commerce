@@ -6,6 +6,7 @@ import productReducer from "./productSlice";
 import searchReducer from "./searchSlice";
 import cartReducer from "./cartSlice";
 import wishListReducer from "./wishListSlice";
+import customerReducer from "./customerSlice";
 
 const appStore = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ const appStore = configureStore({
     search: searchReducer,
     cart: cartReducer,
     wishlist: wishListReducer,
+    customer: customerReducer,
   },
 });
 

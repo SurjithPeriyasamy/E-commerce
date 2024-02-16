@@ -80,14 +80,14 @@ const Header = () => {
             </li>
             <li className="mr-2 relative">
               <Link to={"/cart"}>
-                <FiShoppingCart size={20} />
+                <FiShoppingCart size={24} />
 
                 <div
                   className={
                     (totalCartItems
                       ? "opacity-100 -top-2"
                       : "opacity-0 -top-5") +
-                    " duration-300 absolute font-extrabold flex justify-center items-center left-4 h-5 w-5 z-30 bg-white text-red-700 p-2 text-xs rounded-full"
+                    " duration-300 absolute font-black flex justify-center items-center left-4 h-5 w-5 z-30 bg-white text-red-700 p-3 text-xs rounded-full"
                   }
                 >
                   {totalCartItems}

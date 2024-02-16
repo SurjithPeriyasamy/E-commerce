@@ -40,8 +40,10 @@ const ProductDetail = () => {
               onClick={() => setCurrIndex(index)}
               key={index}
               className={`${
-                currIndex === index ? "opacity-100 scale-125" : "opacity-50"
-              } max-h-24 max-w-28 border p-1 cursor-pointer duration-500`}
+                currIndex === index
+                  ? "opacity-100 scale-125 *:rounded-xl"
+                  : "opacity-50"
+              } max-h-24 max-w-28  p-1 cursor-pointer duration-500 *:duration-200`}
             >
               <img src={image} alt="diff" className="h-full w-full" />
             </div>

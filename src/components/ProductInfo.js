@@ -11,6 +11,8 @@ const ProductInfo = ({ productDetail }) => {
 
   const [quantity, setQuantity] = useState(1);
 
+  const loginError = useSelector((store) => store.user.loggedInUser?.email);
+
   const dispatch = useDispatch();
 
   const addedItems = useSelector((store) => store.cart.addedItems);
@@ -21,7 +23,7 @@ const ProductInfo = ({ productDetail }) => {
     productDetail;
 
   const handleWishList = () => {
-    dispatch(updateWishList({ [id]: { productDetail } }));
+    loginError && dispatch(updateWishList({ [id]: { productDetail } }));
   };
 
   const handleAddQuantity = () => {
@@ -33,7 +35,7 @@ const ProductInfo = ({ productDetail }) => {
   };
 
   const handleCartItems = () => {
-    addedItems[id]
+    loginError && addedItems[id]
       ? dispatch(updateQuantity({ id, quantity }))
       : dispatch(
           addCartItems({
@@ -100,13 +102,22 @@ const ProductInfo = ({ productDetail }) => {
         </div>
         <button
           onClick={handleCartItems}
-          disabled={success}
-          className="bg-[#1D232A] disabled:bg-opacity-50 px-5 py-1 text-white dark:text-cyan-500 rounded-xl"
+          disabled={success || !loginError}
+          className={
+            "bg-[#1D232A] dark:shadow-sm duration-200  disabled:bg-opacity-50 px-5 py-1 text-white dark:text-cyan-500 rounded-xl " +
+            (success
+              ? "translate-y-1 dark:shadow-none"
+              : "dark:shadow-teal-400")
+          }
         >
           + Add to cart
         </button>
       </div>
-
+      {!loginError && (
+        <h4 className="text-red-500 font-semibold tracking-wider">
+          Please Login before adding Items
+        </h4>
+      )}
       <p
         className={
           (success ? "opacity-100" : "opacity-0 translate-y-5") +

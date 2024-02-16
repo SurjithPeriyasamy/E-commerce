@@ -9,7 +9,10 @@ import { FaHeart } from "react-icons/fa6";
 import { addCartItems } from "../utils/cartSlice";
 import { FcOk } from "react-icons/fc";
 import { IoClose } from "react-icons/io5";
+import { MdDelete } from "react-icons/md";
+import { useState } from "react";
 const WishList = () => {
+  const [removeId, setRemoveId] = useState(null);
   const wishListArray = useWishListItems();
   const cartItems = useSelector((store) => store.cart.addedItems);
   const dispatch = useDispatch();
@@ -28,7 +31,13 @@ const WishList = () => {
     );
   };
   const handleClick = (id, productDetail) => {
-    dispatch(updateWishList({ [id]: { productDetail } }));
+    setRemoveId(id);
+    setTimeout(
+      () => (
+        dispatch(updateWishList({ [id]: { productDetail } })), setRemoveId(null)
+      ),
+      300
+    );
   };
   return (
     <div className="px-3 pb-5">
@@ -59,7 +68,10 @@ const WishList = () => {
               return (
                 <div
                   key={id}
-                  className="flex justify-center items-center gap-5 mx-auto w-11/12"
+                  className={
+                    (removeId === id && "translate-x-full") +
+                    " duration-300 transition-transform flex justify-center items-center gap-5 mx-auto w-11/12"
+                  }
                 >
                   <img
                     src={thumbnail}
@@ -74,7 +86,7 @@ const WishList = () => {
                     <h4 className="text-gray-600 text-xs font-semibold">
                       Category : {category}
                     </h4>
-                    <div className="flex flex-col gap-1 mt-1 items-center text-sm">
+                    <div className="flex gap-2 mt-1 items-center text-sm">
                       <button
                         onClick={() =>
                           handleCart(id, item.productDetail, price)
@@ -82,7 +94,7 @@ const WishList = () => {
                         disabled={cartItems[id]}
                         className="disabled:opacity-90 bg-slate-800 py-1 px-3 rounded-md text-white flex gap-2 items-center"
                       >
-                        {cartItems[id] ? "Added in the cart " : "+Add to cart"}
+                        {cartItems[id] ? "Added to the cart " : "+Add to cart"}
                         {cartItems[id] && <FcOk />}
                       </button>
 
@@ -90,7 +102,7 @@ const WishList = () => {
                         className="text-red-700 font-semibold opacity-90"
                         onClick={() => handleClick(id, item.productDetail)}
                       >
-                        Remove from wishlist
+                        <MdDelete size={22} />
                       </button>
                     </div>
                   </div>
