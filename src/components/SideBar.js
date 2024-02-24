@@ -72,7 +72,7 @@ const SideBar = () => {
         <span className="font-semibold">Change Theme</span>
         <ThemeContainer />
       </div>
-      <ul className="sm:space-y-6 *:py-7 space-y-2 sm:pt-10 pt-2">
+      <ul className="*:py-7 sm:pt-10 pt-2">
         <li>
           <Link to={"/"} className="flex gap-1 items-center">
             <FaHome />

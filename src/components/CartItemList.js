@@ -18,42 +18,51 @@ const CartItemList = ({ item }) => {
   return (
     <div
       key={id}
-      className="grid grid-cols-5 border-b-2 justify-items-center place-items-center py-2"
+      className="flex justify-around lg:justify-between items-center py-2 *:flex *:flex-col *:items-center"
     >
-      <div className="flex gap-2 max-md:flex-col ml-7">
+      <div className="gap-1 ">
         <Link to={`/products/${id}`} className="h-16 w-24">
           <img
             src={thumbnail}
             alt="item"
-            className="h-full w-full object-contain rounded-md"
+            className="h-full w-full rounded-md"
           />
         </Link>
-        <div>
-          <Link to={`/products/${id}`} className="font-semibold block">
-            {title}
-          </Link>
-          <Link
-            to={`/products/category/${category}`}
-            className="text-gray-600 dark:text-gray-400 text-sm "
-          >
-            Category : {category}
-          </Link>
+        <Link
+          to={`/products/${id}`}
+          className="w-3/4 truncate text-center font-semibold block text-sm"
+        >
+          {title}
+        </Link>
+        <Link
+          to={`/products/category/${category}`}
+          className="text-gray-600 dark:text-gray-400 text-xs "
+        >
+          Category : {category}
+        </Link>
+      </div>
+      <div className="gap-2 ">
+        <div className="font-semibold text-sm dark:text-gray-400">
+          Price: ${price}
         </div>
-      </div>
-      <div>$ {price}</div>
-      <div className="flex gap-3 items-center border border-black dark:border-white rounded-md py-1 px-3">
-        <button onClick={handleReduceQuantity} className="text-lg">
-          -
+        <div className="flex gap-3 items-center *:text-white *:bg-red-500 *:dark:bg-cyan-600 *:text-xl *:font-extrabold *:px-4 *:rounded-md py-1">
+          <button onClick={handleReduceQuantity}>-</button>
+          {item.quantity}
+          <button onClick={handleAddQuantity}>+</button>
+        </div>
+        <div className="dark:text-gray-400 text-sm">
+          Total price:{" "}
+          <span className="dark:text-white font-semibold">
+            ${item.totalPrice}
+          </span>
+        </div>
+        <button onClick={handleRemove}>
+          <MdDeleteSweep
+            size={25}
+            className="text-red-600 dark:text-cyan-500"
+          />
         </button>
-        {item.quantity}
-        <button onClick={handleAddQuantity} className="text-lg">
-          +
-        </button>
       </div>
-      <div>$ {item.totalPrice}</div>
-      <button onClick={handleRemove}>
-        <MdDeleteSweep size={25} className="text-red-600 dark:text-cyan-500" />
-      </button>
     </div>
   );
 };

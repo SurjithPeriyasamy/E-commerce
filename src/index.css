@@ -11,7 +11,7 @@
   @apply mt-[100px] lg:mt-[70px];
 }
 html {
-  @apply scroll-smooth scrollbar scrollbar-w-2 scrollbar-thumb-slate-400 scrollbar-thumb-rounded-xl;
+  @apply scroll-smooth scrollbar scrollbar-w-2 scrollbar-thumb-pink-500 scrollbar-thumb-rounded-xl;
 }
 body.dark {
   @apply bg-[#1D232A];

@@ -41,7 +41,7 @@ const ProductDetail = () => {
               key={index}
               className={`${
                 currIndex === index
-                  ? "opacity-100 scale-125 *:rounded-xl"
+                  ? "opacity-100 scale-125 *:rounded-lg"
                   : "opacity-50"
               } max-h-24 max-w-28  p-1 cursor-pointer duration-500 *:duration-200`}
             >

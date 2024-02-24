@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa6";
 import { MdStarRate } from "react-icons/md";
@@ -26,7 +26,7 @@ const ProductsContainer = () => {
         <span className="first-letter:capitalize">{productCategory}</span>
       </div>
       <div className="dark:text-[#A6ADBA]">
-        <div className="flex gap-20 mx-auto mb-10 bg-gray-800 px-8 py-3 rounded-t-md dark:*:bg-gray-700 dark:text-gray-200 shadow-lg rounded-b-lg w-fit items-center sticky top-16 z-20">
+        <div className="flex dark:text-white gap-20 mx-auto mb-10 bg-gray-800 px-8 py-3 rounded-t-md dark:*:bg-gray-700 shadow-lg rounded-b-lg w-fit items-center sticky top-16 max-lg:top-[110px] z-20">
           <button
             onClick={toggleTopRate}
             className="flex gap-1 items-center bg-slate-300  rounded-lg px-3 py-1"
@@ -44,7 +44,6 @@ const ProductsContainer = () => {
             <option value="highToLow">High to low</option>
           </select>
         </div>
-
         {productCategory === "allProducts" ? (
           <WholeProducts
             filter={filter}

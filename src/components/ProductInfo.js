@@ -48,7 +48,7 @@ const ProductInfo = ({ productDetail }) => {
         );
     setQuantity(1);
     setSuccess(true);
-    setTimeout(() => setSuccess(false), 2500);
+    setTimeout(() => setSuccess(false), 2000);
   };
   return (
     <div className="md:w-2/5 space-y-5 dark:text-gray-400">
@@ -59,7 +59,7 @@ const ProductInfo = ({ productDetail }) => {
 
       <p className="tracking-wide ">{description}</p>
       <h5 className="flex items-center p-1 px-3 font-semibold text-sm shadow-lg w-fit rounded-lg">
-        <IoMdStar size={20} className="text-green-700 " />
+        <IoMdStar size={20} className="text-green-700 dark:text-green-400" />
         {rating}
       </h5>
       <div className="flex justify-between items-center px-2">
@@ -75,7 +75,8 @@ const ProductInfo = ({ productDetail }) => {
       </div>
       <button
         onClick={handleWishList}
-        className="flex justify-center mx-auto border py-1 px-4 rounded-lg items-center gap-3"
+        disabled={success || !loginError}
+        className="disabled:opacity-80 flex justify-center mx-auto border py-1 px-4 rounded-lg items-center gap-3"
       >
         Wishlist
         <span
@@ -104,7 +105,7 @@ const ProductInfo = ({ productDetail }) => {
           onClick={handleCartItems}
           disabled={success || !loginError}
           className={
-            "bg-[#1D232A] dark:shadow-sm duration-200  disabled:bg-opacity-50 px-5 py-1 text-white dark:text-cyan-500 rounded-xl " +
+            "bg-[#1D232A] dark:shadow-sm duration-200  disabled:opacity-50 px-5 py-1 text-white dark:text-cyan-500 rounded-xl " +
             (success
               ? "translate-y-1 dark:shadow-none"
               : "dark:shadow-teal-400")
@@ -114,9 +115,9 @@ const ProductInfo = ({ productDetail }) => {
         </button>
       </div>
       {!loginError && (
-        <h4 className="text-red-500 font-semibold tracking-wider">
+        <div className="text-red-500 text-center font-semibold tracking-wider">
           Please Login before adding Items
-        </h4>
+        </div>
       )}
       <p
         className={

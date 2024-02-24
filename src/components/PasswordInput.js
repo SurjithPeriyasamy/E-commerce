@@ -10,7 +10,7 @@ const PasswordInput = ({ password }) => {
         ref={password}
         type={showPassword ? "text" : "password"}
         placeholder="Password"
-        className="bg-transparent placeholder:text-slate-300 focus:outline-none w-11/12"
+        className="bg-transparent placeholder:text-slate-300 outline-none w-11/12"
       />
       <span
         className="text-2xl cursor-pointer w-1/12"

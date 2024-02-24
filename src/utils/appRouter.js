@@ -3,13 +3,13 @@ import App from "../App";
 import Errorpage from "../components/ErrorPage";
 import Body from "../components/Body";
 import SignUpPage from "../components/login/SignUpPage";
-import About from "../components/About";
 import Cart from "../components/Cart";
 import UserProfile from "../components/user/UserProfile";
 import ProductDetail from "../components/ProductDetail";
 import ProductsContainer from "../components/ProductsContainer";
 import ProductsCategory from "../components/ProductCategory";
 import Stepper from "../components/stepper/Stepper";
+import Contact from "../components/Contact";
 
 export const appRouter = createBrowserRouter([
   {
@@ -29,8 +29,8 @@ export const appRouter = createBrowserRouter([
         ],
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: "/user",

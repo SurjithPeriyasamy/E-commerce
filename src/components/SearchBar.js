@@ -52,7 +52,7 @@ const SearchBar = () => {
                 <img
                   src={s.thumbnail}
                   alt="thumbnail"
-                  className="h-11 w-11 rounded-sm"
+                  className="size-11 object-cover rounded-md"
                 />{" "}
                 {s.title} <span>{}</span>
               </Link>

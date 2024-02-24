@@ -2,7 +2,7 @@ import Carousel from "./Carousel";
 
 const MainContainer = () => {
   return (
-    <div className="mt-20 lg:mt-5 py-5">
+    <div className="mt-16 lg:mt-5 lg:py-5">
       <Carousel />
     </div>
   );

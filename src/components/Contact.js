@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { BsWhatsapp } from "react-icons/bs";
 import { IoMailSharp } from "react-icons/io5";
 
-const About = () => {
+const Contact = () => {
   const [me, setMe] = useState(null);
 
   const mailSubject = useRef(null);
@@ -61,7 +61,7 @@ const About = () => {
       </div>
       <div className="xl:w-1/2 md:space-y-10 space-y-5 w-full">
         <h3 className="text-white dark:text-gray-500 md:text-3xl text-2xl">
-          Send Message To US
+          Contact US
         </h3>
         <form
           onSubmit={handleSubmit}
@@ -89,4 +89,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Contact;

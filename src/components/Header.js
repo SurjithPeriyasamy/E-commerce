@@ -60,12 +60,12 @@ const Header = () => {
                     className="group-hover:rotate-180 duration-500"
                   />
                 </div>
-                <div className="absolute z-50 hidden left-0 group-hover:top-6 -top-full group-hover:grid grid-cols-2 gap-y-1 gap-x-2 duration-300 bg-white dark:bg-[#2A323C] dark:text-gray-300 font-medium  shadow-lg w-[400px] rounded-lg text-black py-2 px-5">
+                <div className="absolute z-50 invisible left-0 top-6 group-hover:visible grid grid-cols-2 gap-y-1 gap-x-2 duration-300 bg-white dark:bg-[#2A323C] dark:text-gray-300 font-medium  shadow-lg w-[400px] rounded-lg text-black py-2 px-5">
                   <CategoryList />
                 </div>
               </li>
               <li className="order-4">
-                <Link to={"/about"}>About</Link>
+                <Link to={"/contact"}>Contact</Link>
               </li>
             </>
           )}
@@ -103,7 +103,7 @@ const Header = () => {
               <div
                 className={`text-black font-normal text-base tracking-normal z-30 absolute top-0 ${
                   isShowWishList ? "right-0" : "-right-full"
-                } duration-300 bg-white shadow-lg rounded-md max-w-lg w-full`}
+                } duration-300 bg-white px-3 pb-5 dark:bg-gray-800 shadow-lg rounded-bl-lg max-w-lg w-full`}
               >
                 <WishList />
               </div>
@@ -117,7 +117,7 @@ const Header = () => {
                   className="size-10 cursor-pointer rounded-full"
                 />
               ) : (
-                <Link to={"/signUp"} className="">
+                <Link to={"/signUp"}>
                   <LuUser2 size={20} />
                 </Link>
               )}
@@ -130,7 +130,7 @@ const Header = () => {
           <UserPopUp />
         </div>
       )}
-      <div className="lg:hidden bg-[#1D232A] py-4 dark:py-0 border-t border-zinc-500 flex justify-center pt-2 px-2">
+      <div className="lg:hidden bg-[#1D232A] lg:py-4 max-lg:py-2 border-t border-zinc-500 flex justify-center px-2">
         <SearchBar isSearch={isSearchActive} />
       </div>
     </div>

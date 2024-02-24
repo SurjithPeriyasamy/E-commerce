@@ -19,6 +19,7 @@ const useSearchSuggestion = (searchText) => {
     dispatch(addSearchCache({ [searchText]: list }));
     setSuggestions(list);
   }, [searchText]);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       searchCache[searchText]
