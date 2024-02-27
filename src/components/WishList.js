@@ -67,7 +67,7 @@ const WishList = () => {
             </button>
           </div>
           <div
-            className={`max-h-[600px] ${
+            className={`max-h-[600px] mt-10 ${
               wishListArray.length >= 5 && "overflow-y-scroll scrollbar-thin"
             }`}
           >

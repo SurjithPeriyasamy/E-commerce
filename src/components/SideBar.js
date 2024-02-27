@@ -15,6 +15,7 @@ import CategoryList from "./CategoryList";
 import { FaCaretDown } from "react-icons/fa6";
 import { useState } from "react";
 import useCategoryList from "../hooks/useCategoryList";
+
 const SideBar = () => {
   const [showCategoryList, setShowCategoryList] = useState(false);
   const dispatch = useDispatch();
@@ -49,24 +50,25 @@ const SideBar = () => {
       <div className="sm:h-40 h-28 mb-4 flex flex-col gap-2 items-center">
         <div className="sm:max-h-24 max-h-16 ">
           {loggedInUser ? (
-            <img
-              src={loggedInUser.photoURL}
-              alt="user"
-              className="rounded-full h-full shadow-2xl"
-            />
+            <>
+              <img
+                src={loggedInUser.photoURL}
+                alt="user"
+                className="rounded-full mx-auto h-full w-16 shadow-2xl"
+              />
+              <div className="tracking-widest font-semibold">
+                {loggedInUser.email}
+              </div>
+            </>
           ) : (
-            <LuUser size={40} />
+            <>
+              <LuUser size={40} />
+              <Link to={"/signup"} className="underline">
+                Go to login
+              </Link>
+            </>
           )}
         </div>
-        {loggedInUser ? (
-          <h1 className="tracking-widest font-semibold">
-            {loggedInUser.email}
-          </h1>
-        ) : (
-          <Link to={"/signup"} className="underline">
-            Go to login
-          </Link>
-        )}
       </div>
       <div className="flex justify-between">
         <span className="font-semibold">Change Theme</span>

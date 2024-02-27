@@ -41,9 +41,10 @@ const useAllProducts = (category, setFilter, setLoading) => {
   }, [productsCount]);
 
   useEffect(() => {
-    const scroll = window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
     setFilter("noFilter");
-    return () => scroll;
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  return products[category];
 };
 export default useAllProducts;

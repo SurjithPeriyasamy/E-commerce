@@ -35,7 +35,7 @@ const Contact = () => {
     mailBody.current.value = "";
   };
   return (
-    <div className="md:w-[800px] imp max-md:max-w-[50%] bg-slate-700 shadow-2xl  dark:bg-transparent p-3 rounded-lg max-md:mt-20 max-md:py-10 flex max-md:items-center gap-10 max-md:flex-col  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div className="md:w-[800px] max-md:w-3/5 bg-slate-700 shadow-2xl  dark:bg-transparent p-3 rounded-lg max-md:mt-20 max-md:py-10 flex max-md:items-center gap-10 max-md:flex-col  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div className="space-y-5 xl:w-1/2 w-full self-center">
         <img
           src={me?.avatar_url}

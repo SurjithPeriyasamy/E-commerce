@@ -14,10 +14,7 @@ const ProductsContainer = () => {
   const toggleTopRate = () => {
     setFilter((prev) => (prev === "topRated" ? "noFilter" : "topRated"));
   };
-  const WholeProducts = useMemo(
-    () => AllProductsContainer,
-    [productCategory, filter]
-  );
+
   return (
     <div className="w-[90%] mx-auto space-y-5 pb-12">
       <div className="flex items-center gap-1 ml-4 text-gray-500">
@@ -45,7 +42,7 @@ const ProductsContainer = () => {
           </select>
         </div>
         {productCategory === "allProducts" ? (
-          <WholeProducts
+          <AllProductsContainer
             filter={filter}
             category={productCategory}
             setFilter={setFilter}
