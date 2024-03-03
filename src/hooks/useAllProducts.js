@@ -12,12 +12,12 @@ const useAllProducts = (category, setFilter, setLoading) => {
       `https://dummyjson.com/products?limit=${productsCount}`
     );
     const json = await data.json();
+    setLoading(false);
     dispatch(
       addProducts({
         [category]: json.products,
       })
     );
-    setLoading(false);
   };
 
   const handleScroll = () => {

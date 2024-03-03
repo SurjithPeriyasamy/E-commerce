@@ -98,7 +98,7 @@ const Stepper = () => {
       </div>
       <div className="md:w-1/2 w-11/12 px-3 py-5 rounded-md shadow-xl ">
         <ActiveComponent
-          steps={CHECKOUT_STEPS}
+          stepsLength={CHECKOUT_STEPS.length}
           handleClick={handleNext}
           current={current}
         />

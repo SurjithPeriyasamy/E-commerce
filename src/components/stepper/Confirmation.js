@@ -3,7 +3,7 @@ import StepsButton from "./StepsButton";
 import { TbTruckDelivery } from "react-icons/tb";
 import { clearCart } from "../../utils/cartSlice";
 
-const Confirmation = ({ handleClick, steps, current }) => {
+const Confirmation = ({ handleClick, stepsLength, current }) => {
   const dispatch = useDispatch();
   const { customerInfo, shippingInfo } = useSelector((store) => store.customer);
   const { email, userPhone, displayName } = customerInfo;
@@ -24,7 +24,11 @@ const Confirmation = ({ handleClick, steps, current }) => {
       <h5>{doorNo + ", " + street},</h5>
       <h5>{cityAndState + " - " + pincode},</h5>
       <h5>{country}</h5>
-      <StepsButton handleNext={handleNext} steps={steps} current={current} />
+      <StepsButton
+        handleNext={handleNext}
+        stepsLength={stepsLength}
+        current={current}
+      />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { addCustomerInfo } from "../../utils/customerSlice";
 import StepsButton from "./StepsButton";
 import Error from "./Error";
 
-const CustomerInfo = ({ current, steps, handleClick }) => {
+const CustomerInfo = ({ current, stepsLength, handleClick }) => {
   const { email, displayName } = useSelector(
     (store) => store.user.loggedInUser
   );
@@ -58,7 +58,11 @@ const CustomerInfo = ({ current, steps, handleClick }) => {
         />
       </div>
       {error && <Error />}
-      <StepsButton handleNext={handleNext} current={current} steps={steps} />
+      <StepsButton
+        handleNext={handleNext}
+        current={current}
+        stepsLength={stepsLength}
+      />
     </div>
   );
 };

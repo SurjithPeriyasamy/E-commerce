@@ -4,7 +4,7 @@ import { BsCashCoin } from "react-icons/bs";
 import StepsButton from "./StepsButton";
 import Error from "./Error";
 
-const Payment = ({ handleClick, steps, current }) => {
+const Payment = ({ handleClick, stepsLength, current }) => {
   const [selectedPayment, setSelectedPayment] = useState(null);
   const [cardData, setCardData] = useState({
     cardNumber: "",
@@ -24,7 +24,6 @@ const Payment = ({ handleClick, steps, current }) => {
       icon: BsCashCoin,
     },
   ];
-  console.log(selectedPayment);
   const handleChange = (e) => {
     setCardData({ ...cardData, [e.target.name]: e.target.value });
   };
@@ -92,7 +91,11 @@ const Payment = ({ handleClick, steps, current }) => {
           {button.value === "card" && error && <Error />}
         </div>
       ))}
-      <StepsButton handleNext={handleNext} steps={steps} current={current} />
+      <StepsButton
+        handleNext={handleNext}
+        stepsLength={stepsLength}
+        current={current}
+      />
     </div>
   );
 };

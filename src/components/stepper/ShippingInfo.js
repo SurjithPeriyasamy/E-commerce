@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addShippingInfo } from "../../utils/customerSlice";
 import Error from "./Error";
 
-const ShippingInfo = ({ handleClick, steps, current }) => {
+const ShippingInfo = ({ handleClick, stepsLength, current }) => {
   const [error, setError] = useState(false);
   const [shippingAddress, setShippingAddress] = useState({
     doorNo: "",
@@ -50,7 +50,11 @@ const ShippingInfo = ({ handleClick, steps, current }) => {
         ))}
       </div>
       {error && <Error />}
-      <StepsButton handleNext={handleNext} steps={steps} current={current} />
+      <StepsButton
+        handleNext={handleNext}
+        stepsLength={stepsLength}
+        current={current}
+      />
     </>
   );
 };
