@@ -34,7 +34,7 @@ const SearchBar = () => {
         <input
           onChange={handleChange}
           className={
-            "font-normal  placeholder:text-gray-400 bg-transparent focus:outline-none  border-b border-gray-400 duration-300 transition-all placeholder:text-sm " +
+            "font-normal  placeholder:text-gray-400 bg-transparent outline-none  border-b border-gray-400 duration-300 transition-all placeholder:text-sm " +
             (isSearchActive ? "w-full p-[2px] px-3" : " w-0")
           }
           type="text"
@@ -43,21 +43,28 @@ const SearchBar = () => {
       </div>
       {isSearchActive && searchText && (
         <div className="absolute  lg:left-0 left-[10%] lg:top-12 top-28 lg:w-[500px]  lg:max-h-[550px] max-h-[380px] w-4/5 flex flex-col text-black font-medium dark:text-gray-300 overflow-y-scroll scrollbar scrollbar-w-2 scrollbar-thumb-gray-600 gap-2 text-sm shadow-lg bg-white dark:bg-gray-800 p-4 px-8 rounded-lg">
-          {suggestions.map((s, i) => (
-            <Slide direction="up" key={i}>
-              <Link
-                to={`products/${s.id}`}
-                className="flex items-center gap-5 text-sm font-bold p-1 duration-300 rounded-md hover:bg-gray-300 dark:hover:bg-gray-700"
-              >
-                <img
-                  src={s.thumbnail}
-                  alt="thumbnail"
-                  className="size-11 object-cover rounded-md"
-                />{" "}
-                {s.title} <span>{}</span>
-              </Link>
-            </Slide>
-          ))}{" "}
+          {suggestions.length ? (
+            suggestions.map((s, i) => (
+              <Slide direction="up" key={i}>
+                <Link
+                  to={`products/${s.id}`}
+                  className="flex items-center gap-5 text-sm font-bold p-1 duration-300 rounded-md hover:bg-gray-300 dark:hover:bg-gray-700"
+                >
+                  <img
+                    src={s.thumbnail}
+                    alt="thumbnail"
+                    className="size-11 object-cover rounded-md"
+                  />
+                  {s.title}
+                </Link>
+              </Slide>
+            ))
+          ) : (
+            <p className="text-red-500 dark:text-white">
+              <span className="text-lg">😔</span>Items are not found!!! Please
+              Search for other items
+            </p>
+          )}
         </div>
       )}
     </div>

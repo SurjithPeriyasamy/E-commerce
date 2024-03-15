@@ -6,7 +6,7 @@ import { deleteUser } from "firebase/auth";
 import { auth } from "../../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { RiImageEditFill } from "react-icons/ri";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { removeUser } from "../../utils/userSlice";
 import UpdatePhoto from "./UpdatePhoto";
 
@@ -19,7 +19,6 @@ const EditUserProfile = () => {
   const loggedInUser = useSelector((store) => store.user.loggedInUser);
   const currentUser = auth.currentUser;
 
-  useEffect(() => {}, [loggedInUser]);
   const handleDelete = () => {
     deleteUser(currentUser)
       .then(() => {
@@ -30,6 +29,7 @@ const EditUserProfile = () => {
       .catch((error) => {
         // An error ocurred
         // ...
+        console.log(error);
       });
   };
 

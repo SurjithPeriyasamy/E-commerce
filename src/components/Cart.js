@@ -26,8 +26,8 @@ const Cart = () => {
               Clear Cart
             </button>
           </div>
-          <div className="lg:flex max-lg:space-y-4 gap-5 items-center mx-10">
-            <div className="grid md:grid-cols-2 lg:w-3/5 md:gap-5 ">
+          <div className="lg:flex max-lg:space-y-4 gap-5 lg:items-center mx-10">
+            <div className="grid md:grid-cols-2 lg:w-3/4 md:gap-5 ">
               {cartItemsArray.map((item) => (
                 <CartItemList key={item.productDetail.id} item={item} />
               ))}

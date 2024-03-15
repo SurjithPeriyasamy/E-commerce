@@ -79,10 +79,12 @@ const WishList = () => {
                   <div
                     key={id}
                     style={{
-                      transitionDelay: `${i * 150}ms`,
+                      transitionDelay: removeAll ? `${i * 150}ms` : "",
                     }}
                     className={
-                      ((removeId === id || removeAll) && "translate-x-full ") +
+                      (removeId === id || removeAll
+                        ? "translate-x-full "
+                        : "") +
                       "duration-300 transition-transform flex justify-center items-center gap-5 mx-auto w-11/12"
                     }
                   >

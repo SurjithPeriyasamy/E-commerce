@@ -1,8 +1,9 @@
-import { useMemo, useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa6";
 import { MdStarRate } from "react-icons/md";
 import AllProductsContainer from "./AllProductsContainer";
+import ShimmerUi from "./ShimmerUi";
 import CategoryContainer from "./CategoryContainer";
 
 const ProductsContainer = () => {

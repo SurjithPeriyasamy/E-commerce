@@ -6,6 +6,7 @@ import { signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { closePopUp } from "../utils/userSlice";
 import { Link, useNavigate } from "react-router-dom";
+import { clearCart } from "../utils/cartSlice";
 
 const UserPopUp = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const UserPopUp = () => {
         // Sign-out successful.
         dispatch(closePopUp());
         navigate("/");
+        dispatch(clearCart());
       })
       .catch((error) => {
         // An error happened.

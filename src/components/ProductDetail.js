@@ -25,13 +25,13 @@ const ProductDetail = () => {
   const { images } = productDetail;
 
   return (
-    <div className="md:max-w-5xl w-full p-5 shadow-xl rounded-lg mx-auto mt-36 md:h-[500px] flex flex-col max-md:gap-5 md:flex-row justify-center">
+    <div className="md:max-w-5xl w-full p-5 shadow-xl rounded-lg mx-auto mt-36 md:h-[525px] flex flex-col max-md:gap-5 md:flex-row justify-center">
       <div className="md:w-3/5 max-md:h-[400px] flex flex-col justify-between ">
-        <div className="h-3/4">
+        <div className="h-3/4 p-5">
           <img
             src={images[currIndex]}
             alt="products"
-            className="h-full w-full p-5 object-contain "
+            className="h-full w-full object-contain "
           />
         </div>
         <div className="flex justify-around w-full">

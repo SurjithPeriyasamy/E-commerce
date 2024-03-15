@@ -36,29 +36,26 @@ const Carousel = () => {
         className="flex duration-300 "
         style={{ transform: `translateX(-${currIndex * 100}%)` }}
       >
-        {CAROUSEL_IMAGES.map(
-          (image) =>
-            image && (
-              <div key={image.id} className="shrink-0 relative w-full">
-                <img
-                  rel="preload"
-                  src={image.url}
-                  alt="land"
-                  loading="eager"
-                  fetchpriority="high"
-                />
-                <div className="font-sans max-md:hidden top-1/4 w-1/2 left-1/2 -translate-x-1/2 max-w-[50%] absolute text-center text-gray-300 text-4xl tracking-wider italic flex flex-col">
-                  <Zoom
-                    delay={800}
-                    duration={1000}
-                    className="first-letter:text-7xl"
-                  >
-                    {image.slogan}
-                  </Zoom>
-                </div>
-              </div>
-            )
-        )}
+        {CAROUSEL_IMAGES.map((image) => (
+          <div key={image.id} className="shrink-0 relative w-full">
+            <img
+              rel="preload"
+              src={image.url}
+              alt="land"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <div className="font-sans max-md:hidden top-1/4 w-1/2 left-1/2 -translate-x-1/2 max-w-[50%] absolute text-center text-gray-300 text-4xl tracking-wider italic flex flex-col">
+              <Zoom
+                delay={800}
+                duration={1000}
+                className="first-letter:text-7xl"
+              >
+                {image.slogan}
+              </Zoom>
+            </div>
+          </div>
+        ))}
       </div>
       <div className="absolute inset-0 z-30 px-2 group flex justify-between items-center w-full  *:max-sm:bg-white *:max-sm:bg-opacity-30  *:max-sm:scale-75 *:cursor-pointer *:h-20 *:px-2 *:py-3">
         <FaChevronLeft

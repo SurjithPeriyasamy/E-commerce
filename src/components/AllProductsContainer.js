@@ -8,7 +8,7 @@ import { useMemo, useState } from "react";
 const AllProductsContainer = ({ category, filter, setFilter }) => {
   const [loading, setLoading] = useState(false);
 
-  const products = useAllProducts(category, setFilter, setLoading);
+  const products = useAllProducts(category, filter, setFilter, setLoading);
   const productsList = useMemo(
     () => sortedProducts(filter, products),
     [filter, products]

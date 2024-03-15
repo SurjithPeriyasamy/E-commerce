@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProducts } from "../utils/productSlice";
 
-const useAllProducts = (category, setFilter, setLoading) => {
+const useAllProducts = (category, filter, setFilter, setLoading) => {
   const [productsCount, setProductsCount] = useState(10);
   const products = useSelector((store) => store.products.category);
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const useAllProducts = (category, setFilter, setLoading) => {
   useEffect(() => {
     if (!products[category]) {
       fetchAllProducts();
-    } else if (products[category].length < 100) {
+    } else if (filter === "noFilter" && products[category].length < 100) {
       setLoading(true);
       setTimeout(() => {
         fetchAllProducts();

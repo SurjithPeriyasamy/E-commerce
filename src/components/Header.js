@@ -103,7 +103,7 @@ const Header = () => {
               <div
                 className={`text-black font-normal text-base tracking-normal z-30 absolute top-0 ${
                   isShowWishList ? "right-0" : "-right-full"
-                } duration-300 bg-white px-3 pb-5 dark:bg-gray-800 shadow-lg rounded-bl-lg max-w-lg w-full h-svh`}
+                } duration-300 bg-white px-3 pb-5 dark:bg-gray-800 shadow-lg rounded-bl-lg max-w-lg w-full h-dvh`}
               >
                 <WishList />
               </div>

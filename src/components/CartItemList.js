@@ -18,7 +18,7 @@ const CartItemList = ({ item }) => {
   return (
     <div
       key={id}
-      className="flex justify-around lg:justify-between items-center py-2 *:flex *:flex-col *:items-center"
+      className="flex justify-around lg:justify-between items-center py-2 *:flex *:flex-col *:items-center *:w-1/2"
     >
       <div className="gap-1 ">
         <Link to={`/products/${id}`} className="h-16 w-24">

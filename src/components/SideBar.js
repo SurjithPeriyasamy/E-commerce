@@ -39,7 +39,7 @@ const SideBar = () => {
   };
   return (
     <div
-      className={`lg:hidden fixed h-screen overflow-y-scroll scrollbar scrollbar-w-2 scrollbar-thumb-slate-800 scrollbar-thumb-rounded-xl ${
+      className={`lg:hidden fixed h-dvh overflow-y-scroll scrollbar scrollbar-w-2 scrollbar-thumb-slate-800 scrollbar-thumb-rounded-xl ${
         isMenuOpen ? "left-0" : "-left-full"
       } top-0 z-50 dark:bg-[#1D232A] bg-white dark:text-gray-400 p-5 sm:w-1/2  w-3/4 duration-300`}
     >
