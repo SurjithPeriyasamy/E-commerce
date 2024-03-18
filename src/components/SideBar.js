@@ -48,7 +48,7 @@ const SideBar = () => {
         className="text-right text-2xl ml-auto cursor-pointer mb-10"
       />
       <div className="sm:h-40 h-28 mb-4 flex flex-col gap-2 items-center">
-        <div className="sm:max-h-24 max-h-16 ">
+        <div className="sm:max-h-24 max-h-16 mx-auto flex flex-col items-center">
           {loggedInUser ? (
             <>
               <img
@@ -105,9 +105,9 @@ const SideBar = () => {
           </div>
         </li>
         <li>
-          <Link to={"/about"} className="flex gap-1 items-center">
+          <Link to={"/contact"} className="flex gap-1 items-center">
             <FcAbout />
-            About
+            Contact
           </Link>
         </li>
 
