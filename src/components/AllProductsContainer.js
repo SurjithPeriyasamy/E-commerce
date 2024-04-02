@@ -19,11 +19,7 @@ const AllProductsContainer = ({ category, filter, setFilter }) => {
   return (
     <div className="flex justify-evenly flex-wrap lg:gap-12 gap-y-10">
       {productsList.map((product) => (
-        <Link
-          to={`/products/${product.id}`}
-          key={product.id}
-          className="shadow-lg group dark:bg-[#2A323C] hover:bg-blue-200 font-semibold rounded-xl h-80 w-60"
-        >
+        <Link to={`/products/${product.id}`} key={product.id} className="">
           <ProductCard product={product} />
         </Link>
       ))}

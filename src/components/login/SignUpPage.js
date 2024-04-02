@@ -17,12 +17,12 @@ const SignUpPage = () => {
 
   return (
     <div className="bg-slate-800 h-screen">
-      <div className="w-[75%] 2xl:w-[55%] max-w-4xl flex flex-col gap-10 items-center absolute  top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-        <div className="text-white h-20 max-md:h-16">
+      <div className="w-[75%] lg:w-[65%] xl:w-[55%] max-w-4xl flex flex-col gap-10 items-center absolute  top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+        <div className="text-white h-[70px] max-md:h-16">
           <Brand />
         </div>
         <div className="w-full flex justify-center h-[450px] shadow-lg rounded-lg shadow-fuchsia-500">
-          <div className="hidden md:block w-[85%]">
+          <div className="hidden md:block w-full">
             <img src={logDark} alt="signdark" className="h-full" />
           </div>
           <div className=" text-white w-full px-5 flex flex-col gap-1 items-center justify-around">

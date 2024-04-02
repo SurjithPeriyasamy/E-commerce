@@ -42,7 +42,7 @@ const Header = () => {
             className="lg:hidden cursor-pointer"
             onClick={handleMenu}
           />
-          <div className="h-full dark:bg-transparent p-[2px] rounded-xl">
+          <div className="h-12 lg:h-full dark:bg-transparent p-[2px] rounded-xl">
             <Brand />
           </div>
         </div>
