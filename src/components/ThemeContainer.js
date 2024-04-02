@@ -6,8 +6,8 @@ const ThemeContainer = () => {
   const handleTheme = () => {
     const root = document.body;
     root.classList.contains("dark")
-      ? root.classList.remove("dark")
-      : root.classList.add("dark");
+      ? root.classList.toggle("dark")
+      : root.classList.toggle("dark");
   };
   return (
     <div className="cursor-pointer" onClick={handleTheme}>
