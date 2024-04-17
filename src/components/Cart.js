@@ -5,6 +5,7 @@ import { clearCart } from "../utils/cartSlice";
 import EmptyCartImage from "../images/cart.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { AttentionSeeker } from "react-awesome-reveal";
 
 const Cart = () => {
   const [error, setError] = useState(false);
@@ -55,13 +56,22 @@ const Cart = () => {
                   <span>Total</span>
                   <span>${totalPrice}</span>
                 </div>
-                <button
-                  onClick={handleCheckOut}
-                  className={`w-fit transition-transform shadow-lg text-sm py-2 px-3 bg-gray-800 text-cyan-500 font-semibold rounded-md ${
-                    error && "animate-bounce-once"
-                  }`}
-                >
-                  PROCEED TO CHECKOUT
+
+                <button onClick={handleCheckOut}>
+                  {error ? (
+                    <AttentionSeeker
+                      className={`w-fit transition-transform shadow-lg text-sm py-2 px-3 bg-gray-800 text-cyan-500 font-semibold rounded-md `}
+                      effect={"shakeX"}
+                    >
+                      PROCEED TO CHECKOUT
+                    </AttentionSeeker>
+                  ) : (
+                    <span
+                      className={`w-fit transition-transform shadow-lg text-sm py-2 px-3 bg-gray-800 text-cyan-500 font-semibold rounded-md `}
+                    >
+                      PROCEED TO CHECKOUT
+                    </span>
+                  )}
                 </button>
                 {error && !isLogin && (
                   <div className="text-red-600 font-bold">
