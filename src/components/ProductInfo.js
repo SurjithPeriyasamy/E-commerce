@@ -11,7 +11,7 @@ const ProductInfo = ({ productDetail }) => {
 
   const [quantity, setQuantity] = useState(1);
 
-  const isLogin = useSelector((store) => store.user.loggedInUser?.email);
+  // const isLogin = useSelector((store) => store.user.loggedInUser?.email);
 
   const dispatch = useDispatch();
 
@@ -23,7 +23,7 @@ const ProductInfo = ({ productDetail }) => {
     productDetail;
 
   const handleWishList = () => {
-    isLogin && dispatch(updateWishList({ [id]: { productDetail } }));
+    dispatch(updateWishList({ [id]: { productDetail } }));
   };
 
   const handleAddQuantity = () => {
@@ -75,7 +75,7 @@ const ProductInfo = ({ productDetail }) => {
       </div>
       <button
         onClick={handleWishList}
-        disabled={success || !isLogin}
+        disabled={success}
         className="disabled:opacity-80 flex justify-center mx-auto border py-1 px-4 rounded-lg items-center gap-3"
       >
         Wishlist
@@ -103,7 +103,7 @@ const ProductInfo = ({ productDetail }) => {
         </div>
         <button
           onClick={handleCartItems}
-          disabled={success || !isLogin}
+          disabled={success}
           className={
             "bg-[#1D232A] dark:shadow-sm duration-200  disabled:opacity-50 px-5 py-1 text-white dark:text-cyan-500 rounded-xl " +
             (success
@@ -114,11 +114,11 @@ const ProductInfo = ({ productDetail }) => {
           + Add to cart
         </button>
       </div>
-      {!isLogin && (
+      {/* {!isLogin && (
         <div className="text-red-500 text-center font-semibold tracking-wider">
           Please Login before adding Items
         </div>
-      )}
+      )} */}
       <p
         className={
           (success ? "opacity-100" : "opacity-0 translate-y-5") +

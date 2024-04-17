@@ -1,16 +1,22 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import useCartItems from "../hooks/useCartItems";
 import CartItemList from "./CartItemList";
 import { clearCart } from "../utils/cartSlice";
 import EmptyCartImage from "../images/cart.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Cart = () => {
+  const [error, setError] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLogin = useSelector((store) => store.user.loggedInUser);
   const { totalCartItems, cartItemsArray, totalPrice } = useCartItems();
   const handleCart = () => {
     dispatch(clearCart());
   };
+  const handleCheckOut = () =>
+    isLogin ? (navigate("/checkout"), setError(false)) : setError(true);
   return (
     <div className="mt-32 dark:text-white ">
       {totalCartItems ? (
@@ -49,12 +55,19 @@ const Cart = () => {
                   <span>Total</span>
                   <span>${totalPrice}</span>
                 </div>
-                <Link
-                  to={"/checkout"}
-                  className={`w-fit  transition-transform shadow-lg text-sm py-2 px-3 bg-gray-800 text-cyan-500 font-semibold rounded-md`}
+                <button
+                  onClick={handleCheckOut}
+                  className={`w-fit transition-transform shadow-lg text-sm py-2 px-3 bg-gray-800 text-cyan-500 font-semibold rounded-md ${
+                    error && "animate-bounce-once"
+                  }`}
                 >
                   PROCEED TO CHECKOUT
-                </Link>
+                </button>
+                {error && !isLogin && (
+                  <div className="text-red-600 font-bold">
+                    Please Login Before Checkout
+                  </div>
+                )}
               </div>
             </div>
           </div>

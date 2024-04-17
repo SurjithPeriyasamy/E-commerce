@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       animation: {
         "pulse-fast": "pulse 0.8s linear infinite",
+        "bounce-once": "bounce 0.8s linear 1",
       },
       fontFamily: {
         Pacifico: ["Pacifico"],

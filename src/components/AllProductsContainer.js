@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { sortedProducts } from "../utils/helper";
 import ProductCard from "./ProductCard";
 import useAllProducts from "../hooks/useAllProducts";
@@ -19,9 +18,7 @@ const AllProductsContainer = ({ category, filter, setFilter }) => {
   return (
     <div className="flex justify-evenly flex-wrap lg:gap-12 gap-y-10">
       {productsList.map((product) => (
-        <Link to={`/products/${product.id}`} key={product.id} className="">
-          <ProductCard product={product} />
-        </Link>
+        <ProductCard product={product} key={product.id} />
       ))}
       {loading && <ShimmerUi />}
     </div>
