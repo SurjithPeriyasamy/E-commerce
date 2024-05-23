@@ -31,10 +31,10 @@ const ProductCard = ({ product }) => {
           <img
             src={thumbnail}
             alt="product"
-            className="h-44 w-full object-cover rounded-xl group-hover:-translate-y-9 duration-300  border-gray-800 "
+            className="h-44 w-full object-cover rounded-xl group-hover:-translate-y-9 duration-300"
           />
+          <h2 className="dark:text-white">{title}</h2>
         </Link>
-        <h2 className="dark:text-white">{title}</h2>
         <div className="font-normal text-sm flex justify-between items-center">
           <span>${price}</span>{" "}
           <span className="flex text-green-600 font-bold">

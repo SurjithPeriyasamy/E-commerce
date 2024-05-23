@@ -103,14 +103,6 @@ const Stepper = () => {
           current={current}
         />
       </div>
-      {/* {!isComplete && (
-        <button
-          className="text-lg dark:text-cyan-500 dark:bg-transparent bg-slate-700 text-white dark:border-fuchsia-600 dark:border-2 font-semibold capitalize tracking-wider shadow-md px-5 w-32 hover:translate-y-2 hover:shadow-fuchsia-500 hover:shadow-sm shadow-teal-500 duration-200 py-2 rounded-lg"
-          onClick={handleNext}
-        >
-          {current === CHECKOUT_STEPS.length ? "finish" : "Next"}
-        </button>
-      )} */}
     </div>
   );
 };

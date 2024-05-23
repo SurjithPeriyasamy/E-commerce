@@ -8,6 +8,7 @@ const CategoryContainer = ({ filter, setFilter, category }) => {
 
   if (!products) return <ShimmerUi />;
   const productsList = sortedProducts(filter, products);
+  console.log(productsList);
   return (
     <div className="flex justify-evenly flex-wrap lg:gap-12 gap-y-10">
       {productsList.map((product) => (

@@ -84,7 +84,7 @@ const UserForm = ({ isSignIn }) => {
           ref={name}
           type="text"
           placeholder="Username"
-          className="bg-slate-600 rounded-md py-2 placeholder:text-slate-300 px-5 focus:outline-none w-full"
+          className="bg-slate-600 rounded-md py-2 placeholder:text-slate-300 px-5 outline-none w-full"
         />
       )}
 
@@ -92,7 +92,7 @@ const UserForm = ({ isSignIn }) => {
         ref={email}
         type="text"
         placeholder="eg..enjoy123@gmail.com"
-        className="bg-slate-600 rounded-md py-2 placeholder:text-slate-300 px-5 focus:outline-none w-full"
+        className="bg-slate-600 rounded-md py-2 placeholder:text-slate-300 px-5 outline-none w-full"
       />
       <PasswordInput password={password} />
       {error && (
