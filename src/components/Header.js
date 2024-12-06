@@ -57,10 +57,10 @@ const Header = () => {
                   Categories{" "}
                   <FaCaretDown
                     size={20}
-                    className="group-hover:rotate-180 duration-500"
+                    className="group-hover:rotate-180 duration-300"
                   />
                 </div>
-                <div className="absolute z-50 invisible left-0 top-6 group-hover:visible grid grid-cols-2 gap-y-1 gap-x-2 duration-300 bg-white dark:bg-[#2A323C] dark:text-gray-300 font-medium  shadow-lg w-[400px] rounded-lg text-black py-2 px-5">
+                <div className="absolute z-50 invisible opacity-0 group-hover:opacity-100 left-0 top-6 group-hover:visible grid grid-cols-2 gap-y-1 gap-x-2 duration-500 bg-white dark:bg-[#2A323C] dark:text-gray-300 font-medium text-sm shadow-lg w-[400px] rounded-lg text-black py-2 px-5">
                   <CategoryList />
                 </div>
               </li>

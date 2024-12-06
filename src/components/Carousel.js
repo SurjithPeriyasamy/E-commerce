@@ -12,13 +12,11 @@ const Carousel = () => {
 
   useEffect(() => {
     dispatch(closeSideBar());
-  }, []);
-
-  useEffect(() => {
     const autoPlay = setInterval(handleNext, 1800);
 
     return () => clearInterval(autoPlay);
   }, []);
+
   const handleNext = () => {
     setCurrIndex((prev) =>
       prev === CAROUSEL_IMAGES.length - 1 ? 0 : prev + 1

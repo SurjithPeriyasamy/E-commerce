@@ -8,7 +8,7 @@ const CategoryList = () => {
     <Link
       key={category.slug}
       to={`/products/category/${category.slug}`}
-      className="hover:bg-gray-300 hover:translate-x-3 duration-200 transition-transform dark:hover:bg-gray-700 hover:font-semibold p-1 rounded-lg"
+      className="hover:bg-gray-300 hover:translate-x-3 duration-200 transition-transform dark:hover:bg-gray-700 p-1 rounded-lg"
     >
       {category.name}
     </Link>
